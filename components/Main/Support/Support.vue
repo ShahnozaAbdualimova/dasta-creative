@@ -13,8 +13,8 @@
         <CommonSectionHeaderTitle
             data-aos="fade-up"
             class="flex flex-col gap-2 justify-between"
-          :title="$t('Что мы умеем')"
-          :subtitle="$t('Привлекательные видеоролики, инфографика, анимация и другие медиаматериалы помогут вам выделиться на фоне конкурентов, привлечь новых клиентов и повысить продажи.')"
+          :title="$t('what_we_can_do')"
+          :subtitle="$t('what_we_can_do_text')"
         >
           <div
               data-aos="fade-up"
@@ -22,12 +22,13 @@
           >
               <BaseButton
                   variant="secondary"
-                  class="w-full" text="Обсудить проект" />
-            <BaseButton
-                class="w-full"
-              @click="navigateTo('/support-women')"
-              text="Вес услуги"
-            />
+                  class="w-full" :text="$t('discuss_project')" />
+            <NuxtLinkLocale to="/services" class="w-full">
+              <BaseButton
+                  class="w-full"
+                  :text="$t('all_services')"
+              />
+            </NuxtLinkLocale>
           </div>
         </CommonSectionHeaderTitle>
         <CommonCardSupport
@@ -52,95 +53,23 @@
       />
 
     </section>
-<!--    <CommonCardNeedHelp-->
-<!--      :loading="loading"-->
-<!--      class="md:-mt-40 -mt-[16rem]"-->
-<!--      :phone="contanctInfoData?.[0]?.phone"-->
-<!--    />-->
   </div>
 </template>
 
 <script setup lang="ts">
-import IconArrowRight from '~/assets/icons/arrow-right.svg'
+
+
+interface Props {
+  supports?: any[]
+  stats?: any[]
+}
+
+defineProps<Props>()
+
 const showSection = ref(true)
 const loading = ref(false)
 
-const supports = [
-  {
-    category: {
-      id: 1,
-      name: 'Творчества'
-    },
-    id: 1,
-    name: 'Дизайн на все темы',
-    description: 'string',
-    image: '/images/fake/icon.svg',
-  },
-  {
-    category: {
-      id: 1,
-      name: 'Творчества'
-    },
-    id: 1,
-    name: 'Дизайн на все темы',
-    description: 'string',
-    image: '/images/fake/icon.svg',
-  },
-  {
-    category: {
-      id: 1,
-      name: 'Творчества'
-    },
-    id: 1,
-    name: 'Дизайн на все темы',
-    description: 'string',
-    image: '/images/fake/icon.svg',
-  },
-  {
-    category: {
-      id: 1,
-      name: 'Творчества'
-    },
-    id: 1,
-    name: 'Дизайн на все темы',
-    description: 'string',
-    image: '/images/fake/icon.svg',
-  },
-  {
-    category: {
-      id: 1,
-      name: 'Творчества'
-    },
-    id: 1,
-    name: 'Дизайн на все темы',
-    description: 'string',
-    image: '/images/fake/icon.svg',
-  },
 
-]
-
-const stats = [
-  {
-    quantity: 20,
-    title: 'Проектов на сайте',
-  },
-  {
-    quantity: 12,
-    title: 'Проектов на сайте',
-  },
-  {
-    quantity: 50,
-    title: 'Проектов на сайте',
-  },
-  {
-    quantity: 50,
-    title: 'Проектов на сайте',
-  },
-  {
-    quantity: 150,
-    title: 'Проектов на сайте',
-  },
-]
 </script>
 
 <style scoped></style>

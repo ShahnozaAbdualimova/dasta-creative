@@ -14,12 +14,12 @@
             <h1
               class="text-white text-2xl md:text-[40px] font-extrabold md:font-bold leading-130"
             >
-              Вам нужна помощь?
+              {{$t('you_need_help')}}
             </h1>
             <p
               class="text-white/60 max-w-[332px] text-base font-normal leading-snug"
             >
-              Обращайтесь к нам с любым вопросом или предложением. Ответим на ваши вопросы и организует встречу
+              {{$t('you_need_help_text')}}
             </p>
           </div>
 
@@ -38,18 +38,18 @@
                 <div
                   class="self-stretch text-white/60 text-sm font-normal leading-130"
                 >
-                  Голос, который поможет
+                  {{ $t('voice_will_help') }}
                 </div>
                 <a
-                  :href="`tel:+998996753211`"
+                  :href="`tel:${contacts?.phone}`"
                   class="text-white text-base font-semibold leading-tight"
                 >
-                  +998996753211
+                  {{contacts?.phone}}
                 </a>
               </div>
             </div>
-            <a :href="'tel:' + '+998996753211'" class="max-md:w-full">
-              <BaseButton class="max-md:w-full" variant="white" text="Написать в Telegram" />
+            <a :href="contacts?.telegram" class="max-md:w-full">
+              <BaseButton class="max-md:w-full" variant="white" :text="$t('write_telegram')" />
             </a>
           </div>
         </div>
@@ -77,6 +77,7 @@
   </section>
 </template>
 <script setup lang="ts">
+import {useMainStore} from "~/store/main";
 
 interface Props {
   type?: 'red' | 'green'
@@ -88,6 +89,10 @@ const props = withDefaults(defineProps<Props>(), {
   type: 'red',
   phone: '',
 })
+
+const mainStore = useMainStore()
+
+const contacts = computed(() => mainStore.contacts)
 
 
 const cardStyle = computed(() => {

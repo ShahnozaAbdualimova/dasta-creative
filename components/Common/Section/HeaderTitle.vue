@@ -2,11 +2,16 @@
   <div :class="wrapperClass">
     <div class="space-y-3">
       <p
+          v-if="!headingTag"
           :class="titleClass"
           class="text-2xl md:text-4xl font-extrabold leading-12"
       >
         {{ title }}
       </p>
+      <h1 :class="titleClass"
+          class="text-2xl md:text-4xl font-extrabold leading-12">
+        {{ title }}
+      </h1>
       <p
           v-if="isSubtitleHtml"
           class="text-sm font-medium leading-130 text-gray-700"
@@ -35,6 +40,7 @@ interface Props {
   isSubtitleHtml?: boolean
   title?: string
   subtitle?: string
+  headingTag?: boolean
 }
 
 defineProps<Props>()

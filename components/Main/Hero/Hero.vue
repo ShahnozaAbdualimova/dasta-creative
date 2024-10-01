@@ -8,12 +8,20 @@
       </div>
     </div>
     <div class="absolute bottom-12 py-5 w-full bg-[#181F32]"  data-aos="fade-up">
-        <MainHeroMarquee :items="images" auto-fill />
+        <MainHeroMarquee :items="partners" auto-fill />
       </div>
   </div>
 </template>
 
 <script setup lang="ts">
+
+
+interface Props {
+  partners?: any[]
+}
+
+defineProps<Props>()
+
 const images = [
   {
     image_url: '/images/fake/logos/mehr.svg',

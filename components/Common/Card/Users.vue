@@ -5,20 +5,19 @@
           v-for="(item, index) in sixUsers"
           :key="index"
           class="relative group"
-          @click.stop="navigate(item?.link)"
       >
         <LazyCommonAvatar
             class="before:hidden border-2 border-white/20 !-ml-6 first:ml-0 hover:z-20 cursor-pointer transition-300"
             :class="avatarClass"
-            :src="item?.image || item?.user?.avatar"
+            :src="item?.logo"
             size="xl"
         />
-        <BaseTooltip
-            v-if="isTooltip"
-            class="!-bottom-16 bg-white !text-black group-hover:visible group-hover:opacity-100"
-        >
-          {{ item?.full_name || item?.user?.full_name }}
-        </BaseTooltip>
+<!--        <BaseTooltip-->
+<!--            v-if="isTooltip"-->
+<!--            class="!-bottom-16 bg-white !text-black group-hover:visible group-hover:opacity-100"-->
+<!--        >-->
+<!--          {{ item?.full_name || item?.user?.full_name }}-->
+<!--        </BaseTooltip>-->
       </div>
       <div
           v-if="otherUsersCount"
@@ -43,10 +42,9 @@ import type { TClassName } from '~/types'
 
 interface Props {
   users?: {
-    id?: string | number
-    full_name?: string
-    image?: string
-    link?: string
+    "id": number
+    "logo": string
+    "service": number
   }[]
   loading?: boolean
   isTooltip?: boolean

@@ -8,7 +8,7 @@
             class="flex-center text-primary flex-col space-y-1 w-40"
           >
             <p class="sm:text-[50px] text-4xl font-extrabold text-white leading-[65px]">
-              {{ item.quantity }}
+              {{ item?.amount }}
             </p>
 <!--            <count-up-->
 <!--              v-if="isVisible"-->
@@ -28,7 +28,7 @@
               :class="textStyle"
               class="text-white/40 w-36 text-center text-sm font-medium leading-tight"
             >
-              {{ $t(item?.title ?? '') }}
+              {{ item?.title }}
             </p>
           </div>
           <div v-else class="flex-center flex-col gap-1 space-y-1 w-48">

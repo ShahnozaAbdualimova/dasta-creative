@@ -29,10 +29,14 @@ export default <Partial<Config>>{
         blue: {
           DEFAULT: '#2C5CFF',
           100: "#181F32",
+        },
+        red: {
+          DEFAULT: '#FA4A48'
         }
       },
       lineHeight: {
         130: '130%',
+        120: '120%',
         140: '140%',
       },
     }

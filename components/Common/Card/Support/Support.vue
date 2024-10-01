@@ -6,11 +6,8 @@
         class="flex flex-col gap-4 transition-300 bg-blue-100 border border-white/10 rounded-[20px] p-4"
         data-aos="fade-up"
         :class="[
-          { 'shadow-primary-hover': isHover },
           ...[{ '!bg-white !border-gray-500': whiteMode }],
         ]"
-        @mouseenter="isHover = true"
-        @mouseleave="isHover = false"
       >
         <div class="flex justify-between">
           <div
@@ -19,7 +16,7 @@
           >
             <img
               class="w-full h-full object-contain object-center aspect-square"
-              :src="image"
+              :src="icon"
               :alt="name"
             />
           </div>
@@ -29,7 +26,7 @@
             <div
               class="text-right text-white text-xs font-semibold leading-none"
             >
-              {{ category?.name }}
+              {{ label }}
             </div>
           </div>
         </div>
@@ -38,12 +35,12 @@
           class="w-full text-white mt-auto text-xl font-extrabold leading-130"
           :class="{ '!text-brand-black': whiteMode }"
         >
-          {{ name }}
+          {{ title }}
         </h1>
 
 
         <CommonCardUsers
-            :users="users"
+            :users="logos"
             is-tooltip
         />
       </div>
@@ -55,14 +52,15 @@
 
 
 interface ISupportCard {
-  category: {
-    id: number
-    name: string
-  }
   id: number
-  name: string
-  description: string
-  image: string
+  title: string
+  label: string
+  icon: string
+  logos: {
+      "id": number
+      "logo": string
+      "service": number
+    }[]
 }
 
 interface Props extends ISupportCard {
@@ -71,35 +69,13 @@ interface Props extends ISupportCard {
 }
 
 withDefaults(defineProps<Props>(), {
-  title: 'Материальная помощь',
-  badge: 'Финансы',
-  icon: 'hands',
+  title: '',
+  badge: '',
+  icon: '',
   description:
-    'Мы окажем вам финансовую поддержку и консультации, помогая вам воплотить Вашу идею в жизнь.',
+    '',
 })
 
-const isHover = ref(false)
-
-
-
-const users = [
-  {
-    user: {
-      id: 1,
-      full_name: 'Dasta',
-      avatar: '/images/fake/sharh.png',
-      link: `/residents/1`,
-    }
-  },
-  {
-    user: {
-      id: 1,
-      full_name: 'Dasta',
-      avatar: '/images/fake/sharh.png',
-      link: `/residents/1`,
-    }
-  },
-]
 </script>
 <style scoped>
 .shadow-primary-hover {

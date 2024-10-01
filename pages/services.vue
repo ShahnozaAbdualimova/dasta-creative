@@ -1,15 +1,23 @@
 <template>
 <div class="py-[96px]">
-  <MainSupport />
+  <MainSupport :supports :stats />
   <MainProjects />
   <CommonCardNeedHelp />
 </div>
 </template>
 
-<script>
-export default {
-  name: "services"
-}
+<script setup lang="ts">
+
+import { useMainStore } from "~/store/main";
+
+const mainStore = useMainStore()
+
+mainStore.fetchServices()
+mainStore.fetchStatistics()
+
+const supports = computed(() => mainStore.services)
+const stats = computed(() => mainStore.statistics)
+
 </script>
 
 <style scoped>

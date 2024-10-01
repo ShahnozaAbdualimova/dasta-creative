@@ -20,11 +20,13 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ['~/assets/tailwind.css'],
+  css: ['~/assets/tailwind.css', '~/assets/_toastification.css',
+    'vue-toastification/dist/index.css',],
 
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-marquee',
+    '@nuxtjs/i18n',
     [
       '@pinia/nuxt',
       {
@@ -36,6 +38,27 @@ export default defineNuxtConfig({
     ],
     'nuxt-svgo',
   ],
+
+  i18n: {
+    langDir: 'locales',
+    baseUrl: 'https://xolodilnik.uz',
+    locales: [
+      { code: 'ru', iso: 'ru-RU', file: 'ru' },
+      { code: 'uz', iso: 'uz', file: 'uz' },
+      { code: 'en', iso: 'en', file: 'en' },
+    ],
+    lazy: true,
+    useCookie: true,
+    cookieKey: 'i18n_redirected',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      onlyOnRoot: true, // recommended
+      fallbackLocale: 'uz',
+    },
+    defaultLocale: 'uz',
+    strategy: 'prefix_and_default',
+  },
 
   security: {
     headers: {

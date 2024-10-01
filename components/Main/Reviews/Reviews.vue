@@ -1,8 +1,8 @@
 <template>
 <div class="relative overflow-hidden">
-  <div class="container py-16">
-    <CommonSectionHeaderTitle  data-aos="fade-up" title="Отзывы " subtitle="Вы можете посмотреть отзывы о нас" wrapper-class="flex-center-between" >
-      <BaseButton variant="white" size="sm" text="Написать в Telegram" >
+  <div class="container pt-8 pb-16 md:py-16">
+    <CommonSectionHeaderTitle  data-aos="fade-up" :title="$t('reviews')" :subtitle="$t('reviews_text')" wrapper-class="flex-center-between" >
+      <BaseButton variant="white" size="sm" :text="$t('write_telegram')" >
         <template #suffix>
           <i-arrow-right class="text-lg !mb-0" />
         </template>
@@ -11,7 +11,7 @@
 
     <div class="mt-10">
       <Swiper loop :space-between="36" class="!overflow-visible">
-        <SwiperSlide v-for="i in 6" :key="i">
+        <SwiperSlide v-for="(card, i) in reviews" :key="i">
           <MainReviewsCard :card="card"  data-aos="fade-up" />
         </SwiperSlide>
       </Swiper>
@@ -26,12 +26,11 @@ import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 
 
-const card = {
-  user: {
-    title: 'Abbos Alimov',
-    avatar: 'https://avatars.githubusercontent.com/u/10198965?v=4',
-  },
-  review: 'Студия Dasta – это место, где креативность и профессионализм сочетаются на высшем уровне. Работать с этой командой – одно удовольствие.',
-  image: '/images/fake/car.png'
+interface Props {
+  reviews: any[]
 }
+
+defineProps<Props>()
+
+
 </script>
