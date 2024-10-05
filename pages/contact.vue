@@ -3,7 +3,7 @@
   <div class="container">
     <p class="text-sm leading-140 text-white/60">{{$t('contact_text')}}</p>
     <h1 class="mt-2 text-[32px] font-semibold leading-130">{{$t('contact')}}</h1>
-    <div class="mt-8 grid grid-cols-2 gap-6">
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
       <div class="flex flex-col justify-between gap-6">
         <ContactCard v-for="(card, index) in contactsList" :key="index" :card />
       </div>
@@ -11,16 +11,16 @@
       <div class="p-8 rounded-xl bg-[#191E2E] ">
         <div class="flex flex-col gap-5">
           <FormGroup :label="$t('name')" >
-            <FormInput :placeholder="$t('enter_name')" :error="form.$v.value.name.$error" v-model="form.values.name" />
+            <FormInput :error="form.$v.value.name.$error" v-model="form.values.name" />
           </FormGroup>
           <FormGroup :label="$t('phone')" >
             <FormInput :error="form.$v.value.phone.$error" v-model="form.values.phone" />
           </FormGroup>
           <FormGroup :label="$t('write_review')" >
-            <FormTextarea :placeholder="$t('write_review')" maxlength="500" :error="form.$v.value.message.$error" v-model="form.values.message" />
+            <FormTextarea maxlength="500" :error="form.$v.value.message.$error" v-model="form.values.message" />
           </FormGroup>
         </div>
-        <BaseButton class="w-full mt-7" :text="$t('send')" @click="submit" />
+        <BaseButton class="w-full mt-7" :text="$t('send')" @click="submit" :loading />
 
         <p class="mt-4 text-sm leading-130 text-[#676767]">{{$t('send_text')}}</p>
       </div>
@@ -47,6 +47,7 @@ import {required} from "@vuelidate/validators";
 const {t} = useI18n()
 const {showToast} = useCustomToast()
 const mainStore = useMainStore()
+const loading = ref(false)
 
 const contacts = computed(() => mainStore.contacts) as any
 
@@ -65,9 +66,29 @@ const form = useForm({
 
 
 function submit() {
-  showToast('Title', 'error')
   form.$v.value.$touch()
-  console.log('touch')
+  if (form.$v.value.$invalid) {
+    return
+  }
+  const data = {
+    full_name: form.values.name,
+    phone: form.values.phone,
+    text: form.values.message
+  }
+  loading.value = true
+  useApi().$post('/general/messages/', {
+    body: data
+  }).then(res => {
+    showToast(t('successfully_sent'), 'success')
+    form.values.name = ''
+    form.values.phone = ''
+    form.values.message = ''
+    form.$v.value.$reset()
+  }).catch(err => {
+    showToast(t('error'), 'error')
+  }).finally(() => {
+    loading.value = false
+  })
 }
 
 

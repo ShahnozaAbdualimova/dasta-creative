@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'Nuxt 3 Preview',
+      name: 'Dasta',
       port: 3000,
       exec_mode: 'cluster',
       instances: '1',

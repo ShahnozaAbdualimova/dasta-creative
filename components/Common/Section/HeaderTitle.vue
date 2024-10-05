@@ -8,7 +8,7 @@
       >
         {{ title }}
       </p>
-      <h1 :class="titleClass"
+      <h1 v-else :class="titleClass"
           class="text-2xl md:text-4xl font-extrabold leading-12">
         {{ title }}
       </h1>

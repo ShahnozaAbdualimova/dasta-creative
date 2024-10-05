@@ -1,8 +1,8 @@
 <template>
 <div class="pt-[120px] pb-16">
   <div class="container">
-    <div class="relative w-full max-h-[482px] rounded-[20px] border border-[#ECECEC] overflow-hidden" data-aos="fade-up">
-      <img :src="data?.cover_image || data?.main_image" alt="image" class="w-full h-full object-cover" />
+    <div class="relative w-full h-[482px] rounded-[20px] border border-[#ECECEC] overflow-hidden" data-aos="fade-up">
+      <img :src="data?.cover_image" alt="image" class="w-full h-full object-cover" />
 
       <div class="absolute bottom-6 left-5 flex-y-center gap-3 flex-wrap">
         <p v-for="tag in data?.tags" :key="tag.title" class="text-xs text-white bg-blue px-3 py-1.5 rounded-md leading-130 font-medium">
@@ -16,7 +16,7 @@
     </div>
 
     <div class="p-6 rounded-[26px] bg-blue-100 grid md:grid-cols-6 gap-5">
-      <div v-for="(item, index) in data?.images" :key="index" class="md:col-span-2 relative overflow-hidden rounded-[20px]" :class="{'md:col-span-3': index === 0 || index === 1}">
+      <div v-for="(item, index) in data?.images" :key="index" class="md:col-span-2 relative overflow-hidden rounded-[20px]" :class="{'md:col-span-3': index === 0 || index === 1}" @click="openModal(item?.image)">
         <img :src="item?.image" alt="image" class="w-full h-full object-cover" />
       </div>
     </div>
@@ -41,16 +41,27 @@
   </div>
 
     <MainInfoDetail  data-aos="fade-up" class="pt-16" />
+
+
+  <CommonLightbox :show="showLightbox" :image="selectedImage" @change="showLightbox = $event" />
 </div>
 </template>
 
 <script setup lang="ts">
 
 const route = useRoute()
+const showLightbox = ref(false)
+const selectedImage = ref('')
 
 const { data, error } = (await useAsyncData('product', async () => {
   return await useApi().$get(`/projects/projects/${route?.params.slug}`)
 })) as any
+
+
+function openModal(image: string) {
+  selectedImage.value = image
+  showLightbox.value = true
+}
 
 
 
