@@ -6,6 +6,7 @@
     <CommonCardNeedHelp  data-aos="fade-up" />
     <MainProjects :categories />
     <MainReviews :reviews />
+    <MainNews :news />
     <MainInfoDetail  data-aos="fade-up" />
   </div>
 </template>
@@ -15,15 +16,18 @@ import { useMainStore } from "~/store/main";
 
 const mainStore = useMainStore()
 
-mainStore.fetchServices()
-mainStore.fetchStatistics()
-mainStore.fetchReviews()
-mainStore.fetchPartners()
-
 const supports = computed(() => mainStore.services)
 const stats = computed(() => mainStore.statistics)
 const reviews = computed(() => mainStore.reviews)
 const partners = computed(() => mainStore.partners)
+const news = computed(() => mainStore.news)
+
+mainStore.fetchServices()
+mainStore.fetchStatistics()
+mainStore.fetchReviews()
+mainStore.fetchPartners()
+mainStore.fetchNews()
+
 
 </script>
 

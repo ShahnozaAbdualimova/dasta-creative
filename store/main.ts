@@ -8,6 +8,7 @@ export const useMainStore = defineStore('mainStore', {
     reviews: [],
     contacts: {},
       partners: [],
+      news: [],
   }),
   actions: {
     fetchServices() {
@@ -69,6 +70,25 @@ export const useMainStore = defineStore('mainStore', {
                   })
                   .then((res: any) => {
                       this.partners = res.results
+                      resolve(res)
+                  })
+                  .catch((error: any) => {
+                      reject(error)
+                  })
+                  .finally(() => {
+                  })
+          })
+      },
+      fetchNews() {
+          return new Promise((resolve, reject) => {
+              useApi()
+                  .$get('general/news/', {
+                      params: {
+                          limit: 4
+                      }
+                  })
+                  .then((res: any) => {
+                      this.news = res.results
                       resolve(res)
                   })
                   .catch((error: any) => {
