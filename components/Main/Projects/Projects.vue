@@ -16,7 +16,7 @@
   </div>
   <div class="mt-11 grid md:grid-cols-2 gap-10">
     <template v-if="!loading">
-      <MainProjectsCard :card v-for="(card, i) in projects" :key="i"  data-aos="fade-up" />
+      <MainProjectsCard :card v-for="(card, i) in projects" :key="i"  />
     </template>
   </div>
 

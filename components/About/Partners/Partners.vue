@@ -6,7 +6,7 @@
     >
       {{ $t('partners_text') }}
     </p>
-    <div class="mt-5 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="mt-5 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6">
       <AboutPartnersCard v-for="(card, index) in partners" :key="index" :card />
     </div>
   </div>

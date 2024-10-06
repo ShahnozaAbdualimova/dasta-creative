@@ -28,7 +28,7 @@
 
     <div class="mt-16 h-[378px] rounded-xl realtive overflow-hidden">
 
-      <iframe src="https://yandex.ru/map-widget/v1/-/CDTrEE8v" class="w-full h-full" />
+      <iframe src="https://yandex.ru/map-widget/v1/-/CDT34CIx" class="w-full h-full" />
 
     </div>
   </div>

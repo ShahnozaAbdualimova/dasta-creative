@@ -16,7 +16,7 @@
     </div>
 
     <div class="p-6 rounded-[26px] bg-blue-100 grid md:grid-cols-6 gap-5">
-      <div v-for="(item, index) in data?.images" :key="index" class="md:col-span-2 relative overflow-hidden rounded-[20px]" :class="{'md:col-span-3': index === 0 || index === 1}" @click="openModal(item?.image)">
+      <div v-for="(item, index) in data?.images" :key="index" class="md:col-span-2 relative overflow-hidden rounded-[20px]" :class="{'md:col-span-3': index === 0 || index === 1}" @click="openModal(index)">
         <img :src="item?.image" alt="image" class="w-full h-full object-cover" />
       </div>
     </div>
@@ -43,7 +43,7 @@
     <MainInfoDetail  data-aos="fade-up" class="pt-16" />
 
 
-  <CommonLightbox :show="showLightbox" :image="selectedImage" @change="showLightbox = $event" />
+  <CommonLightbox :show="showLightbox" :images="data?.images" :active-index="activeImage" @change="showLightbox = $event" />
 </div>
 </template>
 
@@ -51,15 +51,15 @@
 
 const route = useRoute()
 const showLightbox = ref(false)
-const selectedImage = ref('')
+const activeImage = ref(0)
 
 const { data, error } = (await useAsyncData('product', async () => {
   return await useApi().$get(`/projects/projects/${route?.params.slug}`)
 })) as any
 
 
-function openModal(image: string) {
-  selectedImage.value = image
+function openModal(index: number) {
+  activeImage.value = index
   showLightbox.value = true
 }
 

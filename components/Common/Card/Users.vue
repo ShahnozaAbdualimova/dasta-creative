@@ -54,8 +54,8 @@ const props = defineProps<Props>()
 const router = useRouter()
 
 const sixUsers = computed(() => {
-  return props.users?.length && props.users?.length > 6
-      ? props.users?.slice(0, 6)
+  return props.users?.length && props.users?.length > 12
+      ? props.users?.slice(0, 12)
       : props.users
 })
 

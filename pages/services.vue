@@ -1,6 +1,6 @@
 <template>
 <div class="py-[96px]">
-  <MainSupport :supports :stats />
+  <MainSupport :supports :stats is-all />
   <MainProjects />
   <CommonCardNeedHelp />
 </div>

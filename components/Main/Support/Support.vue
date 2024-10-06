@@ -23,7 +23,7 @@
               <BaseButton
                   variant="secondary"
                   class="w-full" :text="$t('discuss_project')" />
-            <NuxtLinkLocale to="/services" class="w-full">
+            <NuxtLinkLocale v-if="!isAll" to="/services" class="w-full">
               <BaseButton
                   class="w-full"
                   :text="$t('all_services')"
@@ -62,6 +62,7 @@
 interface Props {
   supports?: any[]
   stats?: any[]
+  isAll?: boolean
 }
 
 defineProps<Props>()
