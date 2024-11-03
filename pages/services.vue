@@ -1,25 +1,21 @@
 <template>
-<div class="py-[96px]">
-  <MainSupport :supports :stats is-all />
-  <MainProjects />
-  <CommonCardNeedHelp />
-</div>
+  <div class="py-[96px]">
+    <MainSupport :supports :stats is-all />
+    <MainProjects />
+    <CommonCardNeedHelp />
+  </div>
 </template>
 
 <script setup lang="ts">
-
-import { useMainStore } from "~/store/main";
+import { useMainStore } from '~/store/main'
 
 const mainStore = useMainStore()
 
-mainStore.fetchServices()
+mainStore.fetchServices(100)
 mainStore.fetchStatistics()
 
 const supports = computed(() => mainStore.services)
 const stats = computed(() => mainStore.statistics)
-
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

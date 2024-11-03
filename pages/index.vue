@@ -3,16 +3,17 @@
     <MainHero :partners />
     <MainOffer />
     <MainSupport :supports :stats />
-    <CommonCardNeedHelp  data-aos="fade-up" />
+    <CommonCardNeedHelp data-aos="fade-up" />
     <MainProjects :categories />
     <MainReviews :reviews />
+    <MainHelper />
     <MainNews :news />
-    <MainInfoDetail  data-aos="fade-up" />
+    <MainInfoDetail data-aos="fade-up" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useMainStore } from "~/store/main";
+import { useMainStore } from '~/store/main'
 
 const mainStore = useMainStore()
 
@@ -27,7 +28,4 @@ mainStore.fetchStatistics()
 mainStore.fetchReviews()
 mainStore.fetchPartners()
 mainStore.fetchNews()
-
-
 </script>
-

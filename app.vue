@@ -1,17 +1,18 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <div>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+    <BaseModalDiscuss />
+  </div>
 </template>
 
 <script setup lang="ts">
-
-import {useMainStore} from "~/store/main";
+import { useMainStore } from '~/store/main'
 
 const mainStore = useMainStore()
 
 mainStore.fetchContacts()
-
 
 // ToDo: Change this seo data with real data
 
