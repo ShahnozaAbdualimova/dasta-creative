@@ -1,10 +1,14 @@
 <template>
-  <div class="container">
-      <NuxtMarquee>
-        <div v-for="(item, index) in items" :key="index" class="mr-9 flex-center">
-          <img :src="item?.logo" :alt="item?.link" class="w-full h-full max-h-7 grayscale opacity-40" />
-        </div>
-      </NuxtMarquee>
+  <div class="container -mt-4">
+    <NuxtMarquee>
+      <div v-for="(item, index) in items" :key="index" class="mr-9 flex-center">
+        <img
+          :src="item?.logo"
+          :alt="item?.link"
+          class="w-full h-full max-h-[56px] grayscale opacity-40"
+        />
+      </div>
+    </NuxtMarquee>
   </div>
 </template>
 
