@@ -1,16 +1,14 @@
 <template>
   <div class="py-[96px]">
-    <MainProjects />
+    <MainProjects show-more :default-limit="8" />
     <CommonCardNeedHelp />
   </div>
 </template>
 
 <script>
 export default {
-  name: "projects"
+  name: 'Projects',
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

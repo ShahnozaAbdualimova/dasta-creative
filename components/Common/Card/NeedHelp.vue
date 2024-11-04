@@ -7,10 +7,10 @@
         class="w-full h-full absolute inset-0"
       />
       <div
-        class="border-2 border-white/5 w-full rounded-[30px] p-0 md:p-10 flex flex-col-reverse relative z-10"
+        class="border-2 border-white/5 w-full rounded-[30px] py-4 p-0 md:p-10 flex flex-col-reverse relative z-10"
       >
         <div
-          class="flex-center-between p-4 pt-0 md:gap-16 space-y-4 md:space-y-0 md:justify-between"
+          class="flex-center-between p-4 pt-0 max-md:flex-col md:gap-16 space-y-4 md:space-y-0 md:justify-between"
         >
           <div class="space-y-4">
             <h1
@@ -27,12 +27,18 @@
 
           <div class="max-w-[400px]">
             <FormInput
+              v-model="form.values.phone"
               class="!bg-white text-center"
               input-class="!text-black placeholder:!text-[#97979C] text-center"
               placeholder="+998 91 234 56 78"
+              :error="form.$v.value.phone.$error"
             >
               <template #suffix>
-                <BaseButton :text="$t('send')" @click="submit" />
+                <BaseButton
+                  :loading="buttonLoading"
+                  :text="$t('send')"
+                  @click="submit"
+                />
               </template>
             </FormInput>
             <div
@@ -70,6 +76,7 @@
                   :text="$t('write_telegram')"
                   size="sm"
                   variant="white"
+                  @click="submit"
                 >
                   <template #suffix>
                     <i-arrow-right class="text-blue block !mb-0" />
@@ -121,11 +128,33 @@ const buttonLoading = ref(false)
 
 function submit() {
   form.$v.value.$touch()
-  if (!form.$v.value.$invalid) {
-    buttonLoading.value = true
-    useApi().$post('/general/messages', {
-      body: {},
-    })
+  console.log('submit', form.$v.value)
+  if (form.$v.value.$invalid) {
+    return
   }
+  const data = new FormData()
+
+  data.append('phone', form.values.phone)
+  // {
+  //   full_name: form.values.name,
+  //   phone: form.values.phone,
+  //   text: form.values.message,
+  // }
+  buttonLoading.value = true
+  useApi()
+    .$post('/general/messages/', {
+      body: data,
+    })
+    .then((res) => {
+      showToast(t('successfully_sent'), 'success')
+      form.values.phone = ''
+      form.$v.value.$reset()
+    })
+    .catch((err: any) => {
+      showToast(t('error'), 'error')
+    })
+    .finally(() => {
+      buttonLoading.value = false
+    })
 }
 </script>
