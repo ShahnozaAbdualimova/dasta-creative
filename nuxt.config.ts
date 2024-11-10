@@ -20,8 +20,12 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ['~/assets/tailwind.css', '~/assets/_toastification.css',
-    'vue-toastification/dist/index.css',],
+  css: [
+    '~/assets/tailwind.css',
+    '~/assets/fonts/fonts.css',
+    '~/assets/_toastification.css',
+    'vue-toastification/dist/index.css',
+  ],
 
   modules: [
     '@nuxtjs/tailwindcss',

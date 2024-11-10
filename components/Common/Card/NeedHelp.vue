@@ -44,9 +44,7 @@
             <div
               class="justify-start flex-col min-[960px]:flex-row min-[960px]:items-center md:gap-7 gap-4 flex mt-5"
             >
-              <div
-                class="justify-start md:border-r border-white/10 pr-7 items-center gap-2.5 flex"
-              >
+              <div class="justify-start pr-7 items-center gap-2.5 flex">
                 <div
                   class="w-[30px] h-[30px] bg-white/5 rounded-full shadow border border-white/10 flex-center"
                 >
@@ -54,13 +52,13 @@
                 </div>
                 <div class="flex-col justify-start">
                   <div
-                    class="self-stretch text-white/60 text-[9px] font-normal leading-130 -mb-1.5"
+                    class="self-stretch text-white/60 text-[9px] font-normal leading-130"
                   >
                     {{ $t('voice_will_help') }}
                   </div>
                   <a
                     :href="`tel:${contacts?.phone}`"
-                    class="text-white text-[10px] font-semibold leading-tight"
+                    class="text-white text-base font-semibold"
                   >
                     {{ contacts?.phone }}
                   </a>
@@ -72,14 +70,14 @@
                 class="inline-block"
               >
                 <BaseButton
-                  class="!text-blue"
+                  class="!text-blue !font-bold"
                   :text="$t('write_telegram')"
                   size="sm"
                   variant="white"
                   @click="submit"
                 >
                   <template #suffix>
-                    <i-arrow-right class="text-blue block !mb-0" />
+                    <i-arrow-right class="text-blue block !-mb-0.5" />
                   </template>
                 </BaseButton>
               </a>

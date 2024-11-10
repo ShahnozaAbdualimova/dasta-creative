@@ -22,7 +22,7 @@
         </BaseButton>
       </NuxtLinkLocale>
     </div>
-    <div class="mt-11 grid md:grid-cols-2 gap-10">
+    <div class="mt-11 grid md:grid-cols-3 gap-6">
       <template v-if="!loading">
         <MainProjectsCard v-for="(card, i) in projects" :key="i" :card />
       </template>

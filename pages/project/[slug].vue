@@ -37,7 +37,6 @@
           data-aos="fade-up"
         />
       </div>
-
       <div class="p-6 rounded-[26px] bg-blue-100 grid md:grid-cols-6 gap-5">
         <div
           v-for="(item, index) in data?.images"
@@ -67,7 +66,7 @@
         </div>
       </div>
 
-      <div class="mt-16 rounded-[26px] bg-blue-100 border border-white/10 p-6">
+      <div class="mt-16">
         <p class="text-[32px] leading-130 font-bold text-white">
           {{ data?.title }}
         </p>
@@ -82,7 +81,7 @@
         </div>
 
         <div
-          class="text-lg text-white leading-140 font-medium"
+          class="text-lg text-white leading-140 font-medium static-text"
           v-html="data?.about"
         />
       </div>
@@ -176,3 +175,14 @@ useHead({
   ],
 })
 </script>
+
+<style>
+.static-text ol {
+  padding-left: 16px;
+  list-style-type: numeric;
+}
+.static-text ul {
+  list-style-type: disc;
+  padding-left: 16px;
+}
+</style>
