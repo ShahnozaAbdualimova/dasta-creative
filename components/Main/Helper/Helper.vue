@@ -13,11 +13,11 @@
           :slides-per-view="'auto'"
           class="!overflow-visible"
         >
-          <SwiperSlide class="!w-[407px]">
-            <div class="relative w-full">
+          <SwiperSlide class="!w-[407px] relative">
+            <div class="w-full">
               <MainHelperCardMain />
               <div
-                class="absolute w-[177px] h-[266px] swiper-shadow-helper top-0 right-[-177px] z-10"
+                class="absolute w-[177px] h-[266px] swiper-shadow-helper top-0 right-[-177px] z-10 rotate-180"
               />
             </div>
           </SwiperSlide>

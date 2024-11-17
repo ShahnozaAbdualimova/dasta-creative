@@ -3,7 +3,9 @@
     :to="`/project/${card?.slug}`"
     class="text-white group cursor-pointer"
   >
-    <div class="relative w-full max-h-[378px] rounded-[20px] overflow-hidden">
+    <div
+      class="relative w-full max-h-[258px] h-full rounded-[20px] overflow-hidden"
+    >
       <img
         :src="card?.main_image"
         :alt="card?.title"
@@ -16,7 +18,7 @@
           :key="tag.title"
           class="text-xs text-white bg-blue px-3 py-1.5 rounded-md leading-130 font-medium"
         >
-          #{{ tag.title }}
+          {{ tag.title }}
         </p>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div data-aos="fade-up">
     <div
-      class="max-h-[290px] w-full h-full rounded-2xl relative overflow-hidden"
+      class="max-h-[221px] w-full h-full rounded-2xl relative overflow-hidden"
     >
       <img
         :src="card?.image"

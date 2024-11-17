@@ -6,7 +6,7 @@
     >
       {{ $t('our_family') }}
     </p>
-    <div class="mt-5 grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+    <div class="mt-5 grid md:grid-cols-3 lg:grid-cols-5 gap-5">
       <AboutTeamCard v-for="(card, index) in team" :key="index" :card />
     </div>
   </div>

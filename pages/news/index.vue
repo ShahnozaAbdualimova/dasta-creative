@@ -1,7 +1,7 @@
 <template>
   <div class="py-[96px]">
     <BaseBreadcrumb :breadcrumb="breadcrumbRoutes" />
-    <MainProjects show-more :default-limit="8" />
+    <MainNewsSection :default-limit="9" show-more />
     <CommonCardNeedHelp />
   </div>
 </template>
@@ -11,10 +11,8 @@ const { t } = useI18n()
 
 const breadcrumbRoutes = computed<any[]>(() => [
   {
-    title: t('cases'),
+    title: t('news'),
     link: '#',
   },
 ])
 </script>
-
-<style scoped></style>

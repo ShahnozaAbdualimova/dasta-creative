@@ -1,6 +1,8 @@
 <template>
-  <div class="pt-[120px] pb-16">
-    <div class="container">
+  <div class="pt-[96px] pb-16">
+    <BaseBreadcrumb :breadcrumb="breadcrumbRoutes" />
+
+    <div class="container pt-10">
       <div
         data-aos="fade-up"
         class="aspect-video rounded-[20px] border border-[#ECECEC] w-full h-full relative overflow-hidden"
@@ -69,6 +71,15 @@ useSeoMeta({
   ogTitle: data.value?.title,
   twitterTitle: data.value?.title,
 })
+
+const { t } = useI18n()
+
+const breadcrumbRoutes = computed<any[]>(() => [
+  {
+    title: t('about'),
+    link: '#',
+  },
+])
 </script>
 
 <style scoped></style>

@@ -1,6 +1,7 @@
 <template>
-  <div class="pt-[120px] pb-16">
-    <div class="container">
+  <div class="pt-[96px] pb-16">
+    <BaseBreadcrumb :breadcrumb="breadcrumbRoutes" />
+    <div class="container pt-10">
       <div
         class="relative w-full max-md:aspect-video md:h-[482px] rounded-[20px] overflow-hidden"
         data-aos="fade-up"
@@ -24,7 +25,7 @@
             :key="tag.title"
             class="text-xs text-white bg-blue px-3 py-1.5 rounded-md leading-130 font-medium"
           >
-            #{{ tag.title }}
+            {{ tag.title }}
           </p>
         </div>
       </div>
@@ -76,7 +77,7 @@
             :key="tag.title"
             class="text-xs text-white bg-blue px-3 py-1.5 rounded-md leading-130 font-medium"
           >
-            #{{ tag.title }}
+            {{ tag.title }}
           </p>
         </div>
 
@@ -87,7 +88,15 @@
       </div>
     </div>
 
-    <MainInfoDetail data-aos="fade-up" class="pt-16" />
+    <div class="container py-16">
+      <p class="text-[40px] leading-130 font-semibold text-white">
+        {{ $t('other_projects') }}
+      </p>
+
+      <div class="mt-11 grid md:grid-cols-3 gap-6">
+        <MainProjectsCard v-for="(card, i) in projects" :key="i" :card />
+      </div>
+    </div>
 
     <CommonLightbox
       :show="showLightbox"
@@ -122,7 +131,6 @@ const activeImage = ref(0)
 const showModal = ref(false)
 
 function convertToEmbedUrl(youtubeUrl: string) {
-  console.log('url', youtubeUrl)
   let embedUrl = ''
   const urlPattern =
     /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)(\/(?:watch\?v=|embed\/|shorts\/|v\/|playlist\?list=)?)([^&?/]+)(.*)?/
@@ -148,6 +156,20 @@ const { data, error } = (await useAsyncData('product', async () => {
   return await useApi().$get(`/projects/projects/${route?.params.slug}`)
 })) as any
 
+const projects = ref([])
+function fetchProjects() {
+  useApi()
+    .$get(`/projects/projects/?project_id=${data?.value?.id}`, {
+      params: {
+        limit: 3,
+      },
+    })
+    .then((res: any) => {
+      projects.value = res?.results
+    })
+}
+
+fetchProjects()
 function openModal(index: number) {
   activeImage.value = index
   showLightbox.value = true
@@ -174,6 +196,19 @@ useHead({
     },
   ],
 })
+
+const { t } = useI18n()
+
+const breadcrumbRoutes = computed<any[]>(() => [
+  {
+    title: t('cases'),
+    link: '/projects',
+  },
+  {
+    title: data.value?.title,
+    link: `#`,
+  },
+])
 </script>
 
 <style>

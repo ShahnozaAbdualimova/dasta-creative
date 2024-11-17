@@ -42,9 +42,9 @@
               </template>
             </FormInput>
             <div
-              class="justify-start flex-col min-[960px]:flex-row min-[960px]:items-center md:gap-7 gap-4 flex mt-5"
+              class="justify-start flex-col min-[960px]:flex-row min-[960px]:items-center md:gap-3 gap-4 flex mt-5"
             >
-              <div class="justify-start pr-7 items-center gap-2.5 flex">
+              <div class="justify-start pr-3 items-center gap-2.5 flex">
                 <div
                   class="w-[30px] h-[30px] bg-white/5 rounded-full shadow border border-white/10 flex-center"
                 >

@@ -35,7 +35,9 @@
           </svg>
 
           <div>
-            <p class="text-sm leading-130 font-bold">Dasta Creative</p>
+            <p class="text-sm leading-130 font-bold text-blue">
+              Dasta Creative
+            </p>
             <p class="text-2xl sm:text-[32px] leading-130 font-bold">
               {{ $t('we_present_you') }}
             </p>

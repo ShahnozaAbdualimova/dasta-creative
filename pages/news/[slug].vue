@@ -1,27 +1,64 @@
 <template>
-  <div class="pt-[120px] pb-16">
-    <div class="container">
-      <h1 class="text-[36px] leading-130 font-bold">{{data?.title}}</h1>
+  <div class="pt-[96px] pb-16">
+    <BaseBreadcrumb :breadcrumb="breadcrumbRoutes" />
+    <div class="container pt-10">
+      <h1 class="text-[36px] leading-130 font-bold">{{ data?.title }}</h1>
 
-      <div class="aspect-video relative overflow-hidden w-full h-full rounded-[24px] mt-9">
-        <img :src="data?.image" :alt="data?.title" class="w-full h-full object-cover" />
+      <div
+        class="aspect-video relative overflow-hidden w-full h-full rounded-[24px] mt-9"
+      >
+        <img
+          :src="data?.image"
+          :alt="data?.title"
+          class="w-full h-full object-cover"
+        />
       </div>
 
-      <div v-html="data?.detail" class="mt-10 mb-7 vhtml-text" />
+      <div class="mt-10 mb-7 vhtml-text" v-html="data?.detail" />
+      <div class="mt-10">
+        <p class="leading-130 text-[40px] font-semibold">Другие новости</p>
+
+        <div class="mt-11 grid md:grid-cols-3 gap-6">
+          <NuxtLinkLocale
+            v-for="(card, i) in news"
+            :key="i"
+            :to="`/news/${card?.slug}`"
+            class="group"
+            @click.stop
+          >
+            <MainProjectsCard
+              class="pointer-events-none"
+              :card="{
+                ...card,
+                main_image: card?.image,
+                tags: [card?.category],
+              }"
+            />
+          </NuxtLinkLocale>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-
 const route = useRoute()
-
 
 const { data, error } = (await useAsyncData('news', async () => {
   return await useApi().$get(`/general/news/${route?.params.slug}`)
 })) as any
 
+const news = ref([])
 
+function fetchNews() {
+  useApi()
+    .$get(`/general/news/`)
+    .then((res: any) => {
+      news.value = res?.results
+    })
+}
+
+fetchNews()
 
 useSeoMeta({
   title: data.value?.title,
@@ -32,6 +69,19 @@ useSeoMeta({
   ogImage: data.value?.image,
   twitterImage: data.value?.image,
 })
+
+const { t } = useI18n()
+
+const breadcrumbRoutes = computed<any[]>(() => [
+  {
+    title: t('news'),
+    link: '/news',
+  },
+  {
+    title: data.value?.title,
+    link: `#`,
+  },
+])
 </script>
 
 <style>
@@ -159,4 +209,3 @@ useSeoMeta({
   }
 }
 </style>
-

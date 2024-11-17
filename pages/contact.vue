@@ -1,6 +1,7 @@
 <template>
-  <div class="pt-[120px] pb-16">
-    <div class="container">
+  <div class="pt-[97px] pb-16">
+    <BaseBreadcrumb :breadcrumb="breadcrumbRoutes" />
+    <div class="container pt-10">
       <p class="text-sm leading-140 text-white/60">{{ $t('contact_text') }}</p>
       <h1 class="mt-2 text-[32px] font-semibold leading-130">
         {{ $t('contact') }}
@@ -64,7 +65,7 @@ import { required } from '@vuelidate/validators'
 
 import IconEmail from '~/assets/icons/mail.svg'
 import IconMapPin from '~/assets/icons/map-pin.svg'
-import IconPhone from '~/assets/icons/phone.svg'
+import IconPhone from '~/assets/icons/phone-call.svg'
 import { useForm } from '~/composables/useForm.js'
 import { useMainStore } from '~/store/main'
 
@@ -124,6 +125,13 @@ function submit() {
       loading.value = false
     })
 }
+
+const breadcrumbRoutes = computed<any[]>(() => [
+  {
+    title: t('contact'),
+    link: '#',
+  },
+])
 
 const contactsList = computed(() => [
   {

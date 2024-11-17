@@ -1,5 +1,6 @@
 <template>
   <div class="py-[96px]">
+    <BaseBreadcrumb :breadcrumb="breadcrumbRoutes" />
     <MainSupport :supports :stats is-all />
     <MainProjects />
     <CommonCardNeedHelp />
@@ -16,6 +17,15 @@ mainStore.fetchStatistics()
 
 const supports = computed(() => mainStore.services)
 const stats = computed(() => mainStore.statistics)
+
+const { t } = useI18n()
+
+const breadcrumbRoutes = computed<any[]>(() => [
+  {
+    title: t('what_we_can_do'),
+    link: '#',
+  },
+])
 </script>
 
 <style scoped></style>

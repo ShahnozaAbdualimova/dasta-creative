@@ -1,10 +1,18 @@
 <template>
   <div class="container mb-16">
-    <p
-      class="text-xl md:text-[36px] leading-130 font-bold text-white mb-6 md:mb-11"
-    >
-      {{ $t('news_creative') }}
-    </p>
+    <div class="mb-6 md:mb-11 flex-center-between gap-4 max-sm:flex-col w-full">
+      <p class="text-xl md:text-[36px] leading-130 font-bold text-white">
+        {{ $t('news_creative') }}
+      </p>
+
+      <NuxtLinkLocale to="/news">
+        <BaseButton :text="$t('all_news')" size="sm">
+          <template #suffix>
+            <i-arrow-right class="text-white block !mb-0" />
+          </template>
+        </BaseButton>
+      </NuxtLinkLocale>
+    </div>
 
     <div class="grid lg:grid-cols-2 gap-5">
       <div class="w-full">
