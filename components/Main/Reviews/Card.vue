@@ -12,7 +12,7 @@
       </div>
 
       <div
-        class="bg-white px-3 py-4 rounded-2xl w-max mt-3 opacity-0 transition-300 group-hover:opacity-100"
+        class="bg-white px-3 py-4 rounded-2xl w-max mt-3 opacity-0 transition-all duration-[0.7s] group-hover:opacity-100"
       >
         <p class="text-blue text-base leading-130 font-bold mb-1.5">
           {{ card?.full_name }}

@@ -20,7 +20,7 @@
       <div data-aos="fade-up" class="my-8">
         <h1 class="font-bold text-[40px] leading-130">{{ data?.title }}</h1>
         <div
-          class="whitespace-pre-line mt-1 text-xl leading-140"
+          class="whitespace-pre-line mt-1 text-xl !leading-140 !font-normal"
           v-html="data?.about"
         />
       </div>

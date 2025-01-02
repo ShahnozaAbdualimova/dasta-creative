@@ -1,13 +1,15 @@
 <template>
   <section class="container mx-auto">
-    <div class="w-full rounded-[30px] relative flex overflow-hidden">
+    <div
+      class="w-full rounded-[30px] relative flex overflow-hidden min-h-[304px]"
+    >
       <img
         src="/images/support.png"
         alt="support"
         class="w-full h-full absolute inset-0"
       />
       <div
-        class="border-2 border-white/5 w-full rounded-[30px] py-4 p-0 md:p-10 flex flex-col-reverse relative z-10"
+        class="border-2 border-white/5 w-full rounded-[30px] py-4 p-0 md:p-10 flex flex-col-reverse justify-center relative z-10"
       >
         <div
           class="flex-center-between p-4 pt-0 max-md:flex-col md:gap-16 space-y-4 md:space-y-0 md:justify-between"

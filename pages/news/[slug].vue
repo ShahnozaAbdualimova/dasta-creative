@@ -15,8 +15,10 @@
       </div>
 
       <div class="mt-10 mb-7 vhtml-text" v-html="data?.detail" />
-      <div class="mt-10">
-        <p class="leading-130 text-[40px] font-semibold">Другие новости</p>
+      <div v-if="news?.length" class="mt-10">
+        <p class="leading-130 text-[40px] font-semibold">
+          {{ $t('other_other') }}
+        </p>
 
         <div class="mt-11 grid md:grid-cols-3 gap-6">
           <NuxtLinkLocale
@@ -47,6 +49,8 @@ const route = useRoute()
 const { data, error } = (await useAsyncData('news', async () => {
   return await useApi().$get(`/general/news/${route?.params.slug}`)
 })) as any
+
+if (error.value) showError({ status: 404 })
 
 const news = ref([])
 

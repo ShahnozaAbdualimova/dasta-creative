@@ -8,7 +8,9 @@
         data-aos="fade-up"
       />
       <div class="absolute left-0 bottom-[162px] px-4" data-aos="fade-up">
-        <p class="text-[40px] leading-130 font-bold">{{ $t('hero_title') }}</p>
+        <p class="text-[40px] leading-130 font-extrabold">
+          {{ $t('hero_title') }}
+        </p>
         <p class="mt-1 text-xl leading-130">
           {{ $t('creative_business_solution') }}
         </p>

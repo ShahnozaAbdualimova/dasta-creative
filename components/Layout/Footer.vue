@@ -5,7 +5,7 @@
         <div class="flex-y-center gap-6 max-sm:flex-col">
           <NuxtLinkLocale to="/">
             <img
-              src="/images/logo-footer.svg"
+              src="/images/logo.svg"
               alt="logo"
               class="max-w-[140px] w-full h-full"
             />

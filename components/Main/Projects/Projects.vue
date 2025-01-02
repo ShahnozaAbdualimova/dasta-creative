@@ -22,11 +22,19 @@
         </BaseButton>
       </NuxtLinkLocale>
     </div>
-    <div class="mt-11 grid md:grid-cols-3 gap-6">
-      <template v-if="!loading">
-        <MainProjectsCard v-for="(card, i) in projects" :key="i" :card />
-      </template>
-    </div>
+    <Transition name="fade" mode="out-in">
+      <div
+        :key="loading"
+        class="mt-11 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        <template v-if="!loading">
+          <MainProjectsCard v-for="(card, i) in projects" :key="i" :card />
+        </template>
+        <template v-if="loading">
+          <MainProjectsCardLoading v-for="i in 9" :key="i" />
+        </template>
+      </div>
+    </Transition>
 
     <Transition name="fade">
       <div

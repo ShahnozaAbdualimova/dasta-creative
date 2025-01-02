@@ -1,5 +1,8 @@
 <template>
-  <div class="relative overflow-hidden">
+  <div class="relative flex items-stretch">
+    <div
+      class="bg-gradient-to-l from-dark-100 to-transparent w-full z-10 flex-center mt-[90px] rotate-180"
+    />
     <div class="container pt-8 pb-16 md:py-16">
       <CommonSectionHeaderTitle
         data-aos="fade-up"
@@ -27,6 +30,9 @@
         </Swiper>
       </div>
     </div>
+    <div
+      class="bg-gradient-to-l from-dark-100 to-transparent w-full z-10 flex-center mt-[90px]"
+    />
   </div>
 </template>
 

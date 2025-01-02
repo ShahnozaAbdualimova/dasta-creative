@@ -3,9 +3,7 @@
     :to="`/project/${card?.slug}`"
     class="text-white group cursor-pointer"
   >
-    <div
-      class="relative w-full max-h-[258px] h-full rounded-[20px] overflow-hidden"
-    >
+    <div class="relative w-full h-[258px] rounded-[20px] overflow-hidden">
       <img
         :src="card?.main_image"
         :alt="card?.title"
@@ -25,7 +23,7 @@
 
     <div class="px-4 mt-5">
       <p
-        class="text-xl leading-130 font-bold text-white transition-300 group-hover:text-blue"
+        class="text-xl leading-130 font-extrabold text-white transition-300 group-hover:text-blue"
       >
         {{ card?.title }}
       </p>

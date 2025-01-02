@@ -1,5 +1,8 @@
 <template>
-  <div class="relative overflow-hidden">
+  <div class="relative flex items-stretch">
+    <div
+      class="bg-gradient-to-l from-dark-100 to-transparent w-full z-10 flex-center mt-[90px] rotate-180"
+    />
     <div class="container pt-8 pb-16 md:py-16">
       <CommonSectionHeaderTitle
         data-aos="fade-up"
@@ -7,11 +10,13 @@
         :subtitle="$t('reviews_text')"
         wrapper-class="flex-center-between"
       >
-        <BaseButton size="sm" :text="$t('write_telegram')">
-          <template #suffix>
-            <i-arrow-right class="text-lg !mb-0" />
-          </template>
-        </BaseButton>
+        <a :href="contacts.telegram" target="_blank">
+          <BaseButton size="sm" :text="$t('write_telegram')">
+            <template #suffix>
+              <i-arrow-right class="text-lg !mb-0" />
+            </template>
+          </BaseButton>
+        </a>
       </CommonSectionHeaderTitle>
 
       <div class="mt-10">
@@ -22,6 +27,9 @@
         </Swiper>
       </div>
     </div>
+    <div
+      class="bg-gradient-to-l from-dark-100 to-transparent w-full z-10 flex-center mt-[90px]"
+    />
   </div>
 </template>
 
@@ -30,9 +38,15 @@ import 'swiper/css'
 
 import { Swiper, SwiperSlide } from 'swiper/vue'
 
+import { useMainStore } from '~/store/main'
+
 interface Props {
   reviews: any[]
 }
 
 defineProps<Props>()
+
+const mainStore = useMainStore()
+
+const contacts = computed(() => mainStore.contacts)
 </script>

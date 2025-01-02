@@ -3,18 +3,29 @@
     <LayoutHeader />
     <div class="flex-center-between w-full max-sm:flex-col">
       <div>
-        <p class="text-[80px] md:text-[200px] text-blue font-[800]">404</p>
-        <p class="text-[52px] font-semibold -mt-10">{{$t('page_not_found')}}</p>
-        <p class="text-base leading-140">{{$t('Ushbu sahifa topilmadi iltimos havola to‘g‘ri kiritilganiga e’tibor bering va qaytadan urunib ko‘ring')}}</p>
+        <p class="text-[80px] md:text-[216px] text-[#FA4A48] font-extrabold">
+          404
+        </p>
+        <p class="text-[52px] font-semibold -mt-10">
+          {{ $t('page_not_found') }}
+        </p>
+        <p class="text-base leading-140">
+          {{ $t('page_not_found_text') }}
+        </p>
       </div>
       <div class="w-full">
-          <Vue3Lottie :animationData="AnimationJson" :height="200" :width="200" class="h-[470px]" />
+        <Vue3Lottie
+          :animation-data="AnimationJson"
+          :height="200"
+          :width="200"
+          class="h-[470px]"
+        />
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { Vue3Lottie } from "vue3-lottie";
-import AnimationJson from '~/assets/animation.json'
+import { Vue3Lottie } from 'vue3-lottie'
 
+import AnimationJson from '~/assets/animation.json'
 </script>

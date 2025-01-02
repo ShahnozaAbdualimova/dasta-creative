@@ -2,7 +2,7 @@
   <div class="pb-16">
     <MainHero :partners />
     <MainOffer />
-    <MainSupport :supports :stats />
+    <MainSupport :supports :stats :loading="supportsLoading" />
     <CommonCardNeedHelp data-aos="fade-up" />
     <MainProjects :categories />
     <MainReviews :reviews />
@@ -18,6 +18,7 @@ import { useMainStore } from '~/store/main'
 const mainStore = useMainStore()
 
 const supports = computed(() => mainStore.services)
+const supportsLoading = computed(() => mainStore.servicesLoading)
 const stats = computed(() => mainStore.statistics)
 const reviews = computed(() => mainStore.reviews)
 const partners = computed(() => mainStore.partners)

@@ -68,3 +68,65 @@ body {
     background: #2C5CFF;
     border-radius: 5px;
 }
+
+
+.shimmer {
+    background-color: #181F32;
+    background-image: linear-gradient(
+            to right,
+            #25323d 10%,
+            #2e3c48 35.78%,
+            #25323d 73.28%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeholderShimmer;
+    animation-timing-function: linear;
+    cursor: progress;
+}
+
+.shimmer-wrapper.dark .shimmer {
+    background: linear-gradient(
+            to right,
+            #25323d 10%,
+            #2e3c48 35.78%,
+            #25323d 73.28%
+    ) !important;
+}
+
+@keyframes placeholderShimmer {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.fade-enter-active {
+    animation: fade 0.3s ease-in-out;
+}
+
+.fade-leave-active {
+    animation: fade 0.3s ease-in-out reverse;
+}
+
+.fade-fast-enter-active {
+    animation: fade 0.1s ease-in-out;
+}
+.fade-fast-leave-active {
+    animation: fade 0.1s ease-in-out reverse;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

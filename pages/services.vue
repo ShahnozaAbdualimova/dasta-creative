@@ -1,7 +1,7 @@
 <template>
   <div class="py-[96px]">
     <BaseBreadcrumb :breadcrumb="breadcrumbRoutes" />
-    <MainSupport :supports :stats is-all />
+    <MainSupport :supports :stats is-all :loading="supportsLoading" />
     <MainProjects />
     <CommonCardNeedHelp />
   </div>
@@ -16,6 +16,7 @@ mainStore.fetchServices(100)
 mainStore.fetchStatistics()
 
 const supports = computed(() => mainStore.services)
+const supportsLoading = computed(() => mainStore.servicesLoading)
 const stats = computed(() => mainStore.statistics)
 
 const { t } = useI18n()

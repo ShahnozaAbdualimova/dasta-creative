@@ -5,6 +5,7 @@ import { useApi } from '~/composables/useApi'
 export const useMainStore = defineStore('mainStore', {
   state: () => ({
     services: [],
+    servicesLoading: true,
     statistics: [],
     reviews: [],
     contacts: {},
@@ -13,7 +14,8 @@ export const useMainStore = defineStore('mainStore', {
     showModal: false,
   }),
   actions: {
-    fetchServices(limit = 5) {
+    fetchServices(limit = 8) {
+      this.servicesLoading = true
       return new Promise((resolve, reject) => {
         useApi()
           .$get('general/services/', {
@@ -28,7 +30,9 @@ export const useMainStore = defineStore('mainStore', {
           .catch((error: any) => {
             reject(error)
           })
-          .finally(() => {})
+          .finally(() => {
+            this.servicesLoading = false
+          })
       })
     },
     fetchStatistics() {
