@@ -137,7 +137,7 @@ const contactsList = computed(() => [
   {
     title: t('address'),
     icon: IconMapPin,
-    value: contacts.value?.address,
+    value: contacts.value?.location,
     path: ``,
   },
   {

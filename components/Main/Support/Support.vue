@@ -5,9 +5,7 @@
         v-if="!loading"
         class="w-[360px] translate-x-1/2 right-0 -translate-y-1/2 absolute h-[360px] bg-danger-600/60 blur-[300px] rounded-full"
       />
-      <div
-        class="container py-10 md:py-16 grid gap-6 grid-cols-1 md:grid-cols-3"
-      >
+      <div class="container py-8 md:py-8 grid gap-6 grid-cols-1 md:grid-cols-3">
         <CommonSectionHeaderTitle
           data-aos="fade-up"
           class="flex flex-col gap-2 justify-between"

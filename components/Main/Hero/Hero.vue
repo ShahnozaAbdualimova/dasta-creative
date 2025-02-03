@@ -1,97 +1,54 @@
 <template>
-  <div class="h-screen relative">
-    <div class="flex-center relative container h-full">
-      <img
-        src="/images/hero-logo.svg"
-        alt="hero-logo"
-        class="mt-[-100px]"
-        data-aos="fade-up"
-      />
-      <div class="absolute left-0 bottom-[162px] px-4" data-aos="fade-up">
-        <p class="text-[40px] leading-130 font-extrabold">
-          {{ $t('hero_title') }}
-        </p>
-        <p class="mt-1 text-xl leading-130">
-          {{ $t('creative_business_solution') }}
-        </p>
-      </div>
-    </div>
-    <div
-      class="absolute bottom-12 py-5 w-full bg-[#181F32] h-[68px]"
-      data-aos="fade-up"
-    >
-      <MainHeroMarquee :items="partners" auto-fill />
+  <div>
+    <div class="h-[calc(100vh-70px)] relative overflow-hidden pt-[98px]">
+      <Swiper class="h-[calc(100vh-70px)]">
+        <SwiperSlide
+          v-for="(item, index) in slides"
+          :key="index"
+          class="relative"
+        >
+          <img
+            :src="item?.video"
+            alt="hero-logo"
+            class="h-full w-full object-cover absolute top-0 left-0"
+          />
+          <div class="linear-hero absolute top-0 left-0" />
+          <div class="flex-center relative container h-full z-10">
+            <div class="absolute left-0 bottom-[162px] px-4">
+              <p class="text-[40px] leading-130 font-extrabold">
+                {{ item?.title }}
+              </p>
+              <p class="mt-1 text-xl leading-130">
+                {{ item?.subtitle }}
+              </p>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import 'swiper/css'
+
+import { Swiper, SwiperSlide } from 'swiper/vue'
+
 interface Props {
   partners?: any[]
+  slides?: any[]
 }
 
 defineProps<Props>()
-
-const images = [
-  {
-    image_url: '/images/fake/logos/mehr.svg',
-  },
-  {
-    image_url: '/images/fake/logos/mahalla.svg',
-  },
-  {
-    image_url: '/images/fake/logos/ona.svg',
-  },
-  {
-    image_url: '/images/fake/logos/uic.svg',
-  },
-  {
-    image_url: '/images/fake/logos/mehr.svg',
-  },
-  {
-    image_url: '/images/fake/logos/mahalla.svg',
-  },
-  {
-    image_url: '/images/fake/logos/ona.svg',
-  },
-  {
-    image_url: '/images/fake/logos/uic.svg',
-  },
-  {
-    image_url: '/images/fake/logos/mehr.svg',
-  },
-  {
-    image_url: '/images/fake/logos/mahalla.svg',
-  },
-  {
-    image_url: '/images/fake/logos/ona.svg',
-  },
-  {
-    image_url: '/images/fake/logos/uic.svg',
-  },
-  {
-    image_url: '/images/fake/logos/mehr.svg',
-  },
-  {
-    image_url: '/images/fake/logos/mahalla.svg',
-  },
-  {
-    image_url: '/images/fake/logos/ona.svg',
-  },
-  {
-    image_url: '/images/fake/logos/uic.svg',
-  },
-  {
-    image_url: '/images/fake/logos/mehr.svg',
-  },
-  {
-    image_url: '/images/fake/logos/mahalla.svg',
-  },
-  {
-    image_url: '/images/fake/logos/ona.svg',
-  },
-  {
-    image_url: '/images/fake/logos/uic.svg',
-  },
-]
 </script>
+
+<style scoped>
+.linear-hero {
+  background: linear-gradient(180deg, rgba(13, 18, 35, 0) 0%, #0d1223 100%);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+</style>

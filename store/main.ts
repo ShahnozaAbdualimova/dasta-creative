@@ -10,6 +10,7 @@ export const useMainStore = defineStore('mainStore', {
     reviews: [],
     contacts: {},
     partners: [],
+    slides: [],
     news: [],
     showModal: false,
   }),
@@ -47,6 +48,19 @@ export const useMainStore = defineStore('mainStore', {
             reject(error)
           })
           .finally(() => {})
+      })
+    },
+    fetchSlides() {
+      return new Promise((resolve, reject) => {
+        useApi()
+          .$get('general/slides/')
+          .then((res: any) => {
+            this.slides = res.results
+            resolve(res)
+          })
+          .catch((error: any) => {
+            reject(error)
+          })
       })
     },
     fetchReviews() {

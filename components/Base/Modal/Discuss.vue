@@ -3,9 +3,9 @@
     <Transition name="fade" mode="out-in">
       <div
         v-if="show"
-        class="fixed bg-black/40 w-full bg-dark-100 min-h-screen inset-0 z-[999]"
+        class="fixed bg-black/70 flex-center w-full inset-0 z-[999] px-4"
       >
-        <div class="w-full h-full relative flex-center">
+        <div class="relative flex-center bg-dark-100 rounded-2xl">
           <img
             src="/images/line.svg"
             alt="line"
@@ -18,16 +18,16 @@
           />
 
           <div
-            class="grid xl:grid-cols-2 gap-16 w-full px-4 md:px-16 py-8 md:py-16 relative z-10"
+            class="grid xl:grid-cols-2 items-center gap-16 w-full px-4 md:px-16 py-8 md:py-16 relative z-10"
           >
             <div class="max-xl:hidden shrink-0">
               <p
-                class="text-[56px] xl:text-[124px] font-semibold leading-[100%]"
+                class="text-[56px] xl:text-[84px] font-semibold leading-[100%]"
               >
                 {{ $t('discuss_project') }}
               </p>
               <p
-                class="text-2xl xl:text-[30px] leading-[140%] mt-6 md:mt-10 text-white/60"
+                class="text-lg xl:text-xl leading-[140%] mt-6 md:mt-10 text-white/60"
               >
                 {{ $t('discuss_project_text') }}
               </p>

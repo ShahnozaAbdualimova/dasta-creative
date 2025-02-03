@@ -6,11 +6,17 @@
         class="relative w-full max-md:aspect-video md:h-[482px] rounded-[20px] overflow-hidden"
         data-aos="fade-up"
       >
-        <img
-          :src="data?.cover_image"
-          alt="image"
-          class="w-full h-full object-cover"
-        />
+        <div class="size-full image-loading">
+          <ClientOnly>
+            <img
+              v-lazy="{
+                src: data?.cover_image,
+              }"
+              alt="image"
+              class="w-full h-full object-cover"
+            />
+          </ClientOnly>
+        </div>
         <div
           v-if="data?.video_link"
           class="bg-black/20 absolute inset-0 w-full h-full z-10 flex-center"
@@ -46,11 +52,17 @@
           :class="{ 'md:col-span-3': index === 0 || index === 1 }"
           @click="openModal(index)"
         >
-          <img
-            :src="item?.image"
-            alt="image"
-            class="w-full h-full object-cover"
-          />
+          <div class="size-full image-loading">
+            <ClientOnly>
+              <img
+                v-lazy="{
+                  src: item?.image,
+                }"
+                alt="image"
+                class="w-full h-full object-cover"
+              />
+            </ClientOnly>
+          </div>
         </div>
       </div>
 
@@ -97,6 +109,8 @@
         <MainProjectsCard v-for="(card, i) in projects" :key="i" :card />
       </div>
     </div>
+
+    <CommonCardNeedHelp data-aos="fade-up" />
 
     <CommonLightbox
       :show="showLightbox"
@@ -212,12 +226,16 @@ const breadcrumbRoutes = computed<any[]>(() => [
 </script>
 
 <style>
+.static-text p {
+  margin: 20px 0;
+}
+
 .static-text ol {
-  padding-left: 16px;
-  list-style-type: numeric;
+  padding-left: 16px !important;
+  list-style-type: numeric !important;
 }
 .static-text ul {
-  list-style-type: disc;
-  padding-left: 16px;
+  list-style-type: disc !important;
+  padding-left: 16px !important;
 }
 </style>

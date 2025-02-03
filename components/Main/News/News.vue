@@ -28,9 +28,9 @@
             class="w-full aspect-video lg:h-[252px]"
           />
         </div>
-        <div class="flex max-sm:flex-col gap-5 h-[252px]">
+        <div class="flex max-sm:flex-col gap-5 sm:h-[252px]">
+          <MainNewsCard :card="news?.[2]" />
           <MainNewsCard :card="news?.[3]" />
-          <MainNewsCard :card="news?.[4]" />
         </div>
       </div>
     </div>

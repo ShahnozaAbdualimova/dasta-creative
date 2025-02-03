@@ -1,14 +1,17 @@
 <template>
-  <div class="pb-16">
-    <MainHero :partners />
+  <div class="pb-16 relative overflow-hidden">
+    <MainHero :slides />
+    <div class="py-5 w-full bg-[#181F32] h-[68px]">
+      <MainHeroMarquee :items="partners" auto-fill />
+    </div>
     <MainOffer />
     <MainSupport :supports :stats :loading="supportsLoading" />
-    <CommonCardNeedHelp data-aos="fade-up" />
-    <MainProjects :categories />
+    <CommonCardNeedHelp />
+    <MainProjects show-more :categories />
     <MainReviews :reviews />
     <MainHelper />
     <MainNews :news />
-    <MainInfoDetail data-aos="fade-up" />
+    <MainInfoDetail />
   </div>
 </template>
 
@@ -23,6 +26,7 @@ const stats = computed(() => mainStore.statistics)
 const reviews = computed(() => mainStore.reviews)
 const partners = computed(() => mainStore.partners)
 const news = computed(() => mainStore.news)
+const slides = computed(() => mainStore.slides)
 
 mainStore.fetchServices()
 mainStore.fetchStatistics()

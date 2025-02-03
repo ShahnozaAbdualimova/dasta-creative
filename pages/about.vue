@@ -25,8 +25,24 @@
         />
       </div>
 
+      <MainSupportNumberOfProjects
+        :projects="stats"
+        class="hidden md:flex md:flex-wrap"
+        :loading="loading"
+        data-aos="fade-up"
+        is-visible
+      />
+      <MainSupportNumberOfProjectsMobile
+        :projects="stats"
+        data-aos="fade-up"
+        class="md:hidden mt-0 my-10 md:mt-16 md:mb-96"
+        is-visible
+      />
+
       <AboutTeam :team />
-      <AboutPartners :partners class="my-12" />
+      <AboutPartners :partners class="my-16" />
+
+      <CommonCardNeedHelp data-aos="fade-up" class="mb-[50px] !px-0" />
 
       <MainInfoDetail data-aos="fade-up" />
     </div>
@@ -61,8 +77,15 @@ const { data, error } = (await useAsyncData('about', async () => {
   return await useApi().$get(`/general/about-us`)
 })) as any
 
+const loading = ref(true)
+
 aboutStore.fetchTeam()
 mainStore.fetchPartners()
+mainStore.fetchStatistics().finally(() => {
+  loading.value = false
+})
+
+const stats = computed(() => mainStore.statistics)
 
 useSeoMeta({
   title: data.value?.title,

@@ -23,6 +23,7 @@
         <div class="w-px h-8 bg-white/30 max-sm:hidden" />
         <LayoutHeaderLanguageSwitcher />
         <BaseButton
+          class="max-sm:hidden"
           variant="secondary"
           :text="$t('discuss_the_project')"
           size="sm"

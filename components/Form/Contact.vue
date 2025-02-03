@@ -1,27 +1,29 @@
 <template>
   <div class="p-8 rounded-xl bg-[#191E2E]">
     <div class="flex flex-col gap-5">
-      <FormGroup :label="$t('name')">
+      <FormGroup :label="$t('name')" label-class="!text-sm">
         <FormInput
           v-model="form.values.name"
           :error="form.$v.value.name.$error"
+          class="!h-9"
         />
       </FormGroup>
-      <FormGroup :label="$t('phone')">
+      <FormGroup :label="$t('phone')" label-class="!text-sm">
         <FormInput
           v-model="form.values.phone"
           :error="form.$v.value.phone.$error"
+          class="!h-9"
         />
       </FormGroup>
-      <FormGroup :label="$t('write_review')">
+      <FormGroup :label="$t('write_review')" label-class="!text-sm">
         <FormTextarea
           v-model="form.values.message"
           maxlength="500"
           :error="form.$v.value.message.$error"
         />
       </FormGroup>
-      <FormGroup :label="$t('choose_file')">
-        <FormImageUploader @change="form.values.file = $event" />
+      <FormGroup :label="$t('choose_file')" label-class="!text-sm">
+        <FormImageUploader class="!h-9" @change="form.values.file = $event" />
       </FormGroup>
     </div>
     <BaseButton

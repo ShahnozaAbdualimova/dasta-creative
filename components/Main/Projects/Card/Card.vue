@@ -4,11 +4,14 @@
     class="text-white group cursor-pointer"
   >
     <div class="relative w-full h-[258px] rounded-[20px] overflow-hidden">
-      <img
-        :src="card?.main_image"
-        :alt="card?.title"
-        class="w-full h-full object-cover"
-      />
+      <div class="image-loading size-full">
+        <img
+          v-lazy="{
+            src: card?.main_image,
+          }"
+          class="w-full h-full object-cover"
+        />
+      </div>
 
       <div class="absolute bottom-6 left-5 flex-y-center gap-3 flex-wrap">
         <p

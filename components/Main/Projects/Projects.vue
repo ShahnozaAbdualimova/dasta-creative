@@ -1,8 +1,11 @@
 <template>
-  <div class="pb-8 pt-16 md:py-16 container">
-    <CommonSectionHeaderTitle :title="$t('cases_and_projects')" />
+  <div class="pb-8 pt-8 md:py-8 container">
+    <CommonSectionHeaderTitle
+      ref="sectionTitle"
+      :title="$t('cases_and_projects')"
+    />
 
-    <div class="flex-y-center flex-wrap gap-5 mt-6" data-aos="fade-right">
+    <div class="flex-y-center flex-wrap gap-5 mt-6">
       <button
         v-for="(item, index) in categories"
         :key="index"
@@ -14,7 +17,7 @@
       >
         {{ item?.title }}
       </button>
-      <NuxtLinkLocale to="/projects">
+      <NuxtLinkLocale to="/projects" class="w-full md:w-auto">
         <BaseButton :text="$t('all_projects')" size="sm" @click="active = ''">
           <template #suffix>
             <i-arrow-right class="text-white block !mb-0" />
@@ -28,21 +31,16 @@
         class="mt-11 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
       >
         <template v-if="!loading">
-          <MainProjectsCard v-for="(card, i) in projects" :key="i" :card />
+          <MainProjectsCard
+            v-for="(card, i) in projects"
+            :key="i"
+            ref="projectCards"
+            :card="card"
+          />
         </template>
         <template v-if="loading">
           <MainProjectsCardLoading v-for="i in 9" :key="i" />
         </template>
-      </div>
-    </Transition>
-
-    <Transition name="fade">
-      <div
-        v-if="count > projects?.length && showMore"
-        class="flex-center mt-8"
-        @click="loadMore"
-      >
-        <BaseButton :text="$t('show_more')" size="sm" :loading="loadingMore" />
       </div>
     </Transition>
   </div>
@@ -56,7 +54,9 @@ interface Props {
   showMore?: boolean
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  defaultLimit: 9,
+})
 
 const active = ref(null)
 const offset = ref(0)
@@ -66,7 +66,7 @@ const projectsStore = useProjectsStore()
 
 projectsStore.fetchProjectCategories()
 projectsStore.fetchProjects({
-  limit: props.defaultLimit || 4,
+  limit: props.defaultLimit || 9,
   category: active.value || '',
 })
 

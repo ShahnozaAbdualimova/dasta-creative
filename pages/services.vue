@@ -1,7 +1,13 @@
 <template>
   <div class="py-[96px]">
     <BaseBreadcrumb :breadcrumb="breadcrumbRoutes" />
-    <MainSupport :supports :stats is-all :loading="supportsLoading" />
+    <MainSupport
+      :supports
+      :stats
+      is-all
+      :loading="supportsLoading"
+      class="-mb-16"
+    />
     <MainProjects />
     <CommonCardNeedHelp />
   </div>

@@ -7,7 +7,7 @@
         class="relative group"
       >
         <LazyCommonAvatar
-          class="before:hidden border-2 border-blue-100 !-ml-6 first:ml-0 hover:z-20 cursor-pointer transition-300"
+          class="before:hidden border-[3px] border-blue-100 !-ml-6 first:ml-0 hover:z-20 cursor-pointer transition-300"
           :class="avatarClass"
           :src="item?.logo"
           size="xl"
