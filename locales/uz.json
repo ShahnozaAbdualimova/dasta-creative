@@ -55,5 +55,25 @@
   "dasta_helper_text": "Dasta Creative – bizning missiyamiz biznes uchun noyob, texnologik va kreativ yechimlar yaratishdan iborat.",
   "other_projects": "Boshqa loyihalar",
   "page_not_found_text": "Bu sahifa topilmadi. Havola to‘g‘ri kiritilganiga ishonch hosil qiling va qayta urinib ko‘ring.",
-  "choose_file": "Faylni tanlang"
+  "choose_file": "Faylni tanlang",
+  "why_us": "Nega Dasta Creative ni tanladingiz?",
+  "why_us_text": "Xizmatlarimizdan ham xususiy, ham davlat tashkilotlari va jismoniy shaxslar foydalanishi mumkin.",
+  "whyDastaCards": [
+      {
+        "title": "Qutidan tashqarida o'ylash",
+        "description": "Biz shablon echimlaridan qo'rqmaymiz va har doim bozorda ajralib turishingizga yordam beradigan yangi g'oyalarni qidiramiz."
+      },
+      {
+        "title": "Ajoyib tajriba",
+        "description": "Bizda turli media sohalarida 400 dan ortiq tugallangan loyihalar mavjud."
+      },
+      {
+        "title": "Ishingizga ishtiyoq",
+        "description": "Biz qilayotgan ishimizni chin dildan yaxshi ko'ramiz va har bir loyihaga qalbimiz va qalbimizni beramiz."
+      },
+      {
+        "title": "Individual yondashuv",
+        "description": "Biz sizning biznesingizni, maqsadli auditoriyangizni diqqat bilan o'rganib chiqamiz va siz uchun maxsus ishlaydigan noyob kontentni yaratamiz." 
+      }
+    ]  
 }

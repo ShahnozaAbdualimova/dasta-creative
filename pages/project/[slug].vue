@@ -66,7 +66,7 @@
         </div>
       </div>
 
-      <div v-if="data?.files?.length" class="mt-[50px]">
+      <!-- <div v-if="data?.files?.length" class="mt-[50px]">
         <h4 class="text-[26px] leading-[160%] font-bold text-white">
           {{ $t('full_docs') }}
         </h4>
@@ -77,7 +77,7 @@
             :file="item"
           />
         </div>
-      </div>
+      </div> -->
 
       <div class="mt-16">
         <p class="text-[32px] leading-130 font-bold text-white">

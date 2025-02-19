@@ -55,5 +55,25 @@
   "dasta_helper_text": "Dasta Creative - our mission is to create unique, technological, and creative solutions for business.",
   "other_projects": "Other projects",
   "page_not_found_text": "This page was not found. Make sure the link is correct and try again.",
-  "choose_file": "Choose file"
+  "choose_file": "Choose file",
+  "why_us": "Why choose Dasta Creative?",
+  "why_us_text": "Our services can be used by both private and public organizations and individuals.",
+  "whyDastaCards": [
+    {
+      "title": "Thinking outside the box",
+      "description": "We are not afraid of template solutions and are always looking for fresh ideas that will help you stand out in the market."
+    },
+    {
+      "title": "Vast experience",
+      "description": "We have more than 400 completed projects in various media areas under our belt."
+    },
+    {
+      "title": "Passion for your work",
+      "description": "We truly love what we do and put our whole soul into every project."
+    },
+    {
+      "title": "Individual approach",
+      "description": "We carefully study your business, target audience, to create unique content that will work specifically for you."
+    }
+  ]
 }

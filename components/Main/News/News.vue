@@ -6,7 +6,7 @@
       </p>
 
       <NuxtLinkLocale to="/news">
-        <BaseButton :text="$t('all_news')" size="sm">
+        <BaseButton :text="$t('all_news')" class="max-sm:justify-end" size="sm">
           <template #suffix>
             <i-arrow-right class="text-white block !mb-0" />
           </template>
@@ -16,17 +16,11 @@
 
     <div class="grid lg:grid-cols-2 gap-5">
       <div class="w-full">
-        <MainNewsCardMain
-          :card="news?.[0]"
-          class="aspect-video lg:min-h-[524px] w-full block"
-        />
+        <MainNewsCardMain :card="news?.[0]" class="aspect-video lg:min-h-[524px] w-full block" />
       </div>
       <div class="grid gap-5 h-auto">
         <div>
-          <MainNewsCardMiddle
-            :card="news?.[1]"
-            class="w-full aspect-video lg:h-[252px]"
-          />
+          <MainNewsCardMiddle :card="news?.[1]" class="w-full aspect-video lg:h-[252px]" />
         </div>
         <div class="flex max-sm:flex-col gap-5 sm:h-[252px]">
           <MainNewsCard :card="news?.[2]" />

@@ -24,7 +24,10 @@ export default <Partial<Config>>{
       },
       colors: {
         dark: {
-          100: "#0D1223"
+          100: "#0D1223",
+        },
+        grey: {
+          100: "#8A8C8A"
         },
         blue: {
           DEFAULT: '#2C5CFF',

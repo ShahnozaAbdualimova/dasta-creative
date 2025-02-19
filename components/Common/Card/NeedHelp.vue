@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto">
+  <section class="container mx-auto mt-20">
     <div
       class="w-full rounded-[30px] relative flex overflow-hidden min-h-[304px]"
     >
