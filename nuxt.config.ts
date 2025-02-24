@@ -18,6 +18,11 @@ export default defineNuxtConfig({
       title: 'Dasta - Digital Agency',
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }],
     },
+    meta: [
+      {
+        name: "google-site-verification",
+        content: "oSlSh0zorvyguK5nLao8Bl_u8yiCSzCRk8LA6BsXHbk",
+      },
   },
 
   css: [

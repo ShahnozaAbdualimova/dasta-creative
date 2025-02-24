@@ -1,19 +1,19 @@
 <template>
     <div :class="[
-        'p-6 rounded shadow transition duration-300',
-        isEven ? 'bg-blue-900 text-white' : 'bg-white text-gray-900'
+        'p-6 rounded shadow bg-dark-200 transition duration-300 flex flex-col even:flex-col-reverse',
     ]">
-        <div class="text-3xl font-bold mb-4">
+        <div class="text-5xl font-extrabold mb-4 text-blue leading-[61.26px]">
             {{ index + 1 }}
         </div>
-
-        <h3 class="text-xl font-semibold mb-2">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">
             {{ title }}
-        </h3>
+          </h3>
 
-        <p class="text-sm leading-relaxed">
+          <p class="text-sm leading-relaxed">
             {{ description }}
-        </p>
+          </p>
+        </div>
     </div>
 </template>
 

@@ -8,7 +8,7 @@
     <MainSupport :supports :stats :loading="supportsLoading" />
     <CommonCardNeedHelp />
     <MainProjects show-more :categories :showMore="true" />
-    <!-- <MainWhyUs/> -->
+     <MainWhyUs/>
     <MainReviews :reviews />
     <MainHelper />
     <MainNews :news />

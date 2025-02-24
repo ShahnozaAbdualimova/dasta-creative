@@ -3,7 +3,7 @@
   "about": "Biz haqimizda",
   "cases": "Loyihalar",
   "contact": "Kontaktlar",
-  "discuss_the_project": "Loyihani muhokama qilish",
+  "discuss_the_project": "Muhokama qilish",
   "hero_title": "Biznesingiz uchun rivojlanishi uchun",
   "creative_business_solution": "ijodiy media yechimlar yordamida",
   "page_not_found": "Sahifa topilmadi",
@@ -19,7 +19,7 @@
   "we_present_you_text_2": "Dasta Creative – ijodkorlik bilan yashaydigan va nafas oladigan tajribali ijodkorlar jamoasi.",
   "what_we_can_do": "Biz nimalar qilamiz",
   "what_we_can_do_text": "Videolar, kreativ dizayn, animatsiya va turli media materiallari sizni raqobatchilardan ajratib turishga, yangi mijozlarni jalb qilishga va savdoni oshirishga yordam beradi.",
-  "discuss_project": "Loyihani muhokama qilish",
+  "discuss_project": "Muhokama qilish",
   "all_services": "Barcha xizmatlar",
   "you_need_help": "Yordam kerakmi?",
   "you_need_help_text": "Har qanday savol yoki taklif bilan bizga murojaat qiling. Savollaringizga javob beramiz va uchrashuv tashkil qilamiz.",
@@ -73,7 +73,7 @@
       },
       {
         "title": "Individual yondashuv",
-        "description": "Biz sizning biznesingizni, maqsadli auditoriyangizni diqqat bilan o'rganib chiqamiz va siz uchun maxsus ishlaydigan noyob kontentni yaratamiz." 
+        "description": "Biz sizning biznesingizni, maqsadli auditoriyangizni diqqat bilan o'rganib chiqamiz va siz uchun maxsus ishlaydigan noyob kontentni yaratamiz."
       }
-    ]  
+    ]
 }
