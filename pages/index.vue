@@ -7,7 +7,8 @@
     <MainOffer />
     <MainSupport :supports :stats :loading="supportsLoading" />
     <CommonCardNeedHelp />
-    <MainProjects show-more :categories />
+    <MainProjects show-more :categories :showMore="true" />
+     <MainWhyUs/>
     <MainReviews :reviews />
     <MainHelper />
     <MainNews :news />

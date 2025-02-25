@@ -5,17 +5,17 @@ export const useLanguageSwitcher = () => {
 
   const languagesList = [
     {
-      name: "O'z",
+      name: "O'Z",
       nameFull: "O'zbek",
       code: 'uz',
     },
     {
-      name: 'En',
+      name: 'EN',
       nameFull: 'English',
       code: 'en',
     },
     {
-      name: 'Ру',
+      name: 'РУ',
       nameFull: 'Русский',
       code: 'ru',
     },

@@ -20,7 +20,7 @@
       <h2 class="text-base font-bold leading-130 text-white">
         {{ card?.full_name }}
       </h2>
-      <p class="text-xs leading-140 font-medium text-[#8A8C8A] mt-1">
+      <p class="text-xs leading-140 font-medium text-[] mt-1">
         {{ card?.label }}
       </p>
     </div>

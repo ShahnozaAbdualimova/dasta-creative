@@ -11,7 +11,7 @@
         wrapper-class="flex-center-between"
       >
         <a :href="contacts.telegram" target="_blank">
-          <BaseButton size="sm" :text="$t('write_telegram')">
+          <BaseButton size="sm" class="max-sm:hidden" :text="$t('write_telegram')">
             <template #suffix>
               <i-arrow-right class="text-lg !mb-0" />
             </template>

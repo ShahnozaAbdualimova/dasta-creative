@@ -5,7 +5,7 @@
         <img
           :src="item?.logo"
           :alt="item?.link"
-          class="w-full h-full max-h-[56px] grayscale opacity-40"
+          class="w-full h-full max-h-[85px] grayscale -mt-3 opacity-40"
         />
       </div>
     </NuxtMarquee>

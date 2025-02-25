@@ -52,7 +52,11 @@
 
       <div class="mt-16 h-[378px] rounded-xl realtive overflow-hidden">
         <iframe
-          src="https://yandex.ru/map-widget/v1/-/CDT34CIx"
+          :src="`https://yandex.com/map-widget/v1/?ll=69.2163%2C41.2995&z=12&pt=69.2163,41.2995,pm2rdl`"
+          width="600"
+          height="400"
+          frameborder="0"
+          allowfullscreen="true"
           class="w-full h-full"
         />
       </div>

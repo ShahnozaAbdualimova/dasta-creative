@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   typescript: {
     tsConfig: {
@@ -17,6 +16,12 @@ export default defineNuxtConfig({
       },
       title: 'Dasta - Digital Agency',
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }],
+      meta: [
+        {
+          name: "google-site-verification",
+          content: "oSlSh0zorvyguK5nLao8Bl_u8yiCSzCRk8LA6BsXHbk",
+        },
+      ],
     },
   },
 
@@ -35,8 +40,8 @@ export default defineNuxtConfig({
       '@pinia/nuxt',
       {
         autoImports: [
-          'defineStore', // automatically imports `defineStore`
-          ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
+          'defineStore',
+          ['defineStore', 'definePiniaStore'],
         ],
       },
     ],
@@ -57,7 +62,7 @@ export default defineNuxtConfig({
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
-      onlyOnRoot: true, // recommended
+      onlyOnRoot: true,
       fallbackLocale: 'uz',
     },
     defaultLocale: 'uz',
@@ -97,4 +102,4 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2024-07-10',
-})
+});
