@@ -8,13 +8,22 @@
         class="aspect-video rounded-[20px] border border-[#ECECEC] w-full h-full relative overflow-hidden"
       >
         <div
+          v-if="data?.video_file || data?.video_link"
           class="bg-black/20 absolute inset-0 w-full h-full z-10 flex-center"
         >
           <BaseButtonPlay @click="showModal = true" />
         </div>
-        <video class="w-full h-full">
+        <video v-if="data?.video_file" class="w-full h-full">
           <source :src="data?.video_file" type="video/mp4" />
         </video>
+        <div v-else class="w-full h-full image-loading">
+          <img
+            v-lazy="{
+              src: data?.image,
+            }"
+            class="w-full h-full object-cover"
+          />
+        </div>
       </div>
 
       <div data-aos="fade-up" class="my-8">
@@ -54,9 +63,16 @@
       body-class="!bg-transparent !max-w-[1280px]"
     >
       <div class="aspect-video relative overflow-hidden w-full h-full">
-        <video class="w-full h-full" controls>
+        <video v-if="data?.video_file" class="w-full h-full" controls>
           <source :src="data?.video_file" type="video/mp4" />
         </video>
+        <iframe
+          v-else
+          class="w-full h-full"
+          :src="getYouTubeEmbedUrl(data?.video_link)"
+          frameborder="0"
+          referrerpolicy="strict-origin-when-cross-origin"
+        />
       </div>
     </BaseModal>
   </div>
@@ -94,6 +110,11 @@ useSeoMeta({
   ogTitle: data.value?.title,
   twitterTitle: data.value?.title,
 })
+
+function getYouTubeEmbedUrl(url: string) {
+  const videoId = url.split('v=')[1]?.split('&')[0]
+  return videoId ? `https://www.youtube.com/embed/${videoId}` : null
+}
 
 const { t } = useI18n()
 

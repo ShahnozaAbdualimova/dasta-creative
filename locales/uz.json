@@ -8,15 +8,15 @@
   "creative_business_solution": "ijodiy media yechimlar yordamida",
   "page_not_found": "Sahifa topilmadi",
   "info_detail_title": "Savollaringiz bormi?",
-  "info_detail_text": "Savol va taklif bilan bizga murojaat qiling.\nSavollaringizga javob beramiz yoki uchrashuv belgilaymiz.",
+  "info_detail_text": "Savollaringiz bo‘lsa, biz bilan bog‘laning – javob beramiz yoki uchrashuv tashkil qilamiz.",
   "our_address": "Manzil",
   "phone_number": "Telefon",
   "email": "E-mail",
-  "copyright": "© Dasta Creative. Barcha huquqlar himoyalangan",
+  "copyright": "© Dasta Creative. Barcha huquqlar himoyalangan.",
   "full_docs": "To‘liq taqdimot",
   "we_present_you": "Sizga taqdim etamiz",
   "we_present_you_text_1": "Bu shunchaki studio emas, balki g‘oyalaringizni samarali biznes yechimlarga aylantiradigan ijodiy jamoa. Biz faqat loyihalarni bajarish bilan cheklanib qolmaymiz; bizning missiyamiz – kompaniyalarga o‘sish va rivojlanishda yordam berish, ularning brendini mustahkamlash va biznesni raqobatchilar orasida ajratib ko‘rsatish uchun noyob va ijodiy yechimlar yaratish.",
-  "we_present_you_text_2": "Dasta Creative – ijodkorlik bilan yashaydigan va nafas oladigan tajribali ijodkorlar jamoasi.",
+  "we_present_you_text_2": "Dasta Creative – ijodkorlik bilan yashaydigan va nafas oladigan tajribali jamoa.",
   "what_we_can_do": "Biz nimalar qilamiz",
   "what_we_can_do_text": "Videolar, kreativ dizayn, animatsiya va turli media materiallari sizni raqobatchilardan ajratib turishga, yangi mijozlarni jalb qilishga va savdoni oshirishga yordam beradi.",
   "discuss_project": "Bog'lanish",
@@ -42,6 +42,8 @@
   "our_family": "Bizning jamoa",
   "partners_text": "Bizning mijozlar",
   "news_creative": "Yangiliklar",
+  "all_news": "Barchasi yangiliklar",
+  "news": "Yangiliklar",
   "read": "O‘qish",
   "dasta_helper_title": "Dasta Helper",
   "helper_text": "Dasta Helper xizmati professional jamoa tomonidan yaratilgan bo‘lib, sizga istalgan loyihangiz uchun kerakli rasmlar, logotiplar va grafikalarni osongina topishga yordam beradi.",
@@ -52,28 +54,28 @@
   "enter_the_site": "Saytga o‘tish",
   "main": "Bosh sahifa",
   "discuss_project_text": "Har qanday savol va taklif bilan bizga murojaat qiling. Savollaringizga javob beramiz yoki uchrashuv belgilaymiz.",
-  "dasta_helper_text": "Dasta Creative – bizning missiyamiz biznes uchun noyob, texnologik va kreativ yechimlar yaratishdan iborat.",
+  "dasta_helper_text": "Dasta Creative – bizning missiyamiz biznes uchun noyob, texnologik va kreativ yechimlar yaratishdir.",
   "other_projects": "Boshqa loyihalar",
   "page_not_found_text": "Bu sahifa topilmadi. Havola to‘g‘ri kiritilganiga ishonch hosil qiling va qayta urinib ko‘ring.",
   "choose_file": "Faylni tanlang",
-  "why_us": "Nega Dasta Creative ni tanladingiz?",
-  "why_us_text": "Xizmatlarimizdan ham xususiy, ham davlat tashkilotlari va jismoniy shaxslar foydalanishi mumkin.",
+  "why_us": "Nega aynan Dasta Creative?",
+  "why_us_text": "Kreativ va innovatsiyalar olamidagi ishonchli hamkoringiz!",
   "whyDastaCards": [
-      {
-        "title": "Qutidan tashqarida o'ylash",
-        "description": "Biz shablon echimlaridan qo'rqmaymiz va har doim bozorda ajralib turishingizga yordam beradigan yangi g'oyalarni qidiramiz."
-      },
-      {
-        "title": "Ajoyib tajriba",
-        "description": "Bizda turli media sohalarida 400 dan ortiq tugallangan loyihalar mavjud."
-      },
-      {
-        "title": "Ishingizga ishtiyoq",
-        "description": "Biz qilayotgan ishimizni chin dildan yaxshi ko'ramiz va har bir loyihaga qalbimiz va qalbimizni beramiz."
-      },
-      {
-        "title": "Individual yondashuv",
-        "description": "Biz sizning biznesingizni, maqsadli auditoriyangizni diqqat bilan o'rganib chiqamiz va siz uchun maxsus ishlaydigan noyob kontentni yaratamiz."
-      }
-    ]
+    {
+      "title": "Noodatiy fikrlash",
+      "description": "Biz andozaviy yechimlardan qo'rqmaymiz va sizni bozorda ajralib turishingizga yordam beradigan yangi g'oyalarni doim izlaymiz."
+    },
+    {
+      "title": "Uzoq yillik tajriba",
+      "description": "400 dan ortiq muvaffaqiyatli loyihalar bilan turli media yo‘nalishlarida katta tajribaga egamiz."
+    },
+    {
+      "title": "Ishga bo‘lgan muhabbat",
+      "description": "Biz o‘z ishimizni chin dildan sevamiz va har bir loyihaga qalbimizni qo‘yamiz."
+    },
+    {
+      "title": "Individual yondashuv",
+      "description": "Sizning biznesingiz va maqsadli auditoriyangizni chuqur o‘rganib, aynan sizga mos keladigan noyob kontent yaratamiz."
+    }
+  ]
 }

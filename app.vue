@@ -14,7 +14,6 @@ import { useMainStore } from '~/store/main'
 const mainStore = useMainStore()
 
 mainStore.fetchContacts()
-mainStore.fetchSlides()
 
 // ToDo: Change this seo data with real data
 

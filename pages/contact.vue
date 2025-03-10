@@ -52,7 +52,7 @@
 
       <div class="mt-16 h-[378px] rounded-xl realtive overflow-hidden">
         <iframe
-          :src="`https://yandex.com/map-widget/v1/?ll=69.2163%2C41.2995&z=12&pt=69.2163,41.2995,pm2rdl`"
+          :src="`https://yandex.com/map-widget/v1/?ll=${contacts.longitude},${contacts.latitude}&z=15&pt=${contacts.longitude},${contacts.latitude},pm2rdl`"
           width="600"
           height="400"
           frameborder="0"

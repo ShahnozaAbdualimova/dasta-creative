@@ -46,11 +46,11 @@
             </div>
             <button
               v-if="hasClose"
-              class="absolute top-[18px] right-5"
+              class="absolute -top-[18px] right-5"
               @click="close"
             >
               <i-close
-                class="text-2xl leading-6 text-dark hover:text-red transition-300"
+                class="text-2xl leading-6 text-white hover:text-red transition-300"
               />
             </button>
           </div>
@@ -62,7 +62,6 @@
 <script lang="ts" setup>
 import { useEventListener } from '@vueuse/core'
 import { onMounted, ref, watch } from 'vue'
-
 
 interface Props {
   title?: string

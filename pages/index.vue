@@ -7,8 +7,8 @@
     <MainOffer />
     <MainSupport :supports :stats :loading="supportsLoading" />
     <CommonCardNeedHelp />
-    <MainProjects show-more :categories :showMore="true" />
-     <MainWhyUs/>
+    <MainProjects show-more :categories :show-more="true" />
+    <MainWhyUs />
     <MainReviews :reviews />
     <MainHelper />
     <MainNews :news />
@@ -29,6 +29,7 @@ const partners = computed(() => mainStore.partners)
 const news = computed(() => mainStore.news)
 const slides = computed(() => mainStore.slides)
 
+mainStore.fetchSlides()
 mainStore.fetchServices()
 mainStore.fetchStatistics()
 mainStore.fetchReviews()
