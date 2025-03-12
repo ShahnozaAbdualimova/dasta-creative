@@ -4,7 +4,7 @@
       class="max-h-[221px] w-full h-full rounded-2xl relative overflow-hidden"
     >
       <img
-        :src="card?.image"
+        v-lazy="{ src: card?.image }"
         :alt="card?.full_name"
         class="w-full h-full object-cover"
       />

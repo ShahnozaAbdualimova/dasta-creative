@@ -13,17 +13,19 @@
         >
           <BaseButtonPlay @click="showModal = true" />
         </div>
-        <video v-if="data?.video_file" class="w-full h-full">
-          <source :src="data?.video_file" type="video/mp4" />
-        </video>
-        <div v-else class="w-full h-full image-loading">
-          <img
-            v-lazy="{
-              src: data?.image,
-            }"
-            class="w-full h-full object-cover"
-          />
-        </div>
+        <ClientOnly>
+          <video v-if="data?.video_file" class="w-full h-full">
+            <source :src="data?.video_file" type="video/mp4" />
+          </video>
+          <div v-else class="w-full h-full image-loading">
+            <img
+              v-lazy="{
+                src: data?.image,
+              }"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </ClientOnly>
       </div>
 
       <div data-aos="fade-up" class="my-8">

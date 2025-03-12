@@ -8,8 +8,10 @@
           class="relative"
         >
           <img
-            :src="item?.video"
-            alt="hero-logo"
+            v-lazy="{
+              src: item?.video,
+            }"
+            :alt="item?.title"
             class="h-full w-full object-cover absolute top-0 left-0"
           />
           <div class="linear-hero absolute top-0 left-0" />

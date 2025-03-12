@@ -10,6 +10,7 @@
             src: card?.main_image,
           }"
           class="w-full h-full object-cover"
+          :alt="card?.title"
         />
       </div>
 
