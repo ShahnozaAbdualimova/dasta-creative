@@ -30,7 +30,8 @@
           </div>
         </div>
 
-        <BaseButton class="max-sm:w-full"
+        <BaseButton
+          class="max-sm:w-full"
           :text="$t('discuss_project')"
           @click="mainStore.showModal = true"
         />
@@ -55,7 +56,6 @@ import { useMainStore } from '~/store/main'
 const mainStore = useMainStore()
 
 const contacts = computed(() => mainStore.contacts) as any
-console.log("bu contacts value ", contacts.value)
 const socials = computed(() => {
   return [
     {

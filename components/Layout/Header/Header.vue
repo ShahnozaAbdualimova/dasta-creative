@@ -31,7 +31,12 @@
         />
       </div>
       <Transition name="from-left">
-        <LayoutHeaderMobile v-if="isOpen" :menu @close="isOpen = false" />
+        <LayoutHeaderMobile
+          v-if="isOpen"
+          :menu
+          @close="isOpen = false"
+          @open-modal="$emit('open-modal')"
+        />
       </Transition>
     </div>
   </header>
