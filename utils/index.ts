@@ -21,3 +21,7 @@ export function convertBytes(bytes: number) {
   const unit = units[unitIndex]
   return bytes?.toFixed(2) + ' ' + unit
 }
+
+export function formatDateISO(date: string) {
+  return new Date(date).toString('yyyy-mm-ddThh:mm:ss:zzz')
+}

@@ -18,8 +18,8 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }],
       meta: [
         {
-          name: "google-site-verification",
-          content: "oSlSh0zorvyguK5nLao8Bl_u8yiCSzCRk8LA6BsXHbk",
+          name: 'google-site-verification',
+          content: 'oSlSh0zorvyguK5nLao8Bl_u8yiCSzCRk8LA6BsXHbk',
         },
       ],
     },
@@ -32,29 +32,13 @@ export default defineNuxtConfig({
     'vue-toastification/dist/index.css',
   ],
 
-  modules: [
-    '@nuxtjs/tailwindcss',
-    'nuxt-marquee',
-    '@nuxtjs/i18n',
-    [
-      '@pinia/nuxt',
-      {
-        autoImports: [
-          'defineStore',
-          ['defineStore', 'definePiniaStore'],
-        ],
-      },
-    ],
-    'nuxt-svgo',
-  ],
-
   i18n: {
     langDir: 'locales',
     baseUrl: 'https://xolodilnik.uz',
     locales: [
-      { code: 'ru', iso: 'ru-RU', file: 'ru' },
-      { code: 'uz', iso: 'uz', file: 'uz' },
-      { code: 'en', iso: 'en', file: 'en' },
+      { code: 'ru', iso: 'ru-RU', file: 'ru.json' },
+      { code: 'uz', iso: 'uz', file: 'uz.json' },
+      { code: 'en', iso: 'en', file: 'en.json' },
     ],
     lazy: true,
     useCookie: true,
@@ -68,6 +52,76 @@ export default defineNuxtConfig({
     defaultLocale: 'uz',
     strategy: 'prefix_and_default',
   },
+
+  routeRules: {
+    '/': {
+      sitemap: {
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date().toString('yyyy-mm-ddThh:mm:ss:zzz'),
+      },
+    },
+    '/ru': {
+      sitemap: {
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date().toString('yyyy-mm-ddThh:mm:ss:zzz'),
+      },
+    },
+    '/en': {
+      sitemap: {
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date().toString('yyyy-mm-ddThh:mm:ss:zzz'),
+      },
+    },
+    '/uz': {
+      sitemap: {
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date().toString('yyyy-mm-ddThh:mm:ss:zzz'),
+      },
+    },
+  },
+
+  sitemap: {
+    exclude: [],
+    xslColumns: [
+      { label: 'URL', width: '50%' },
+      { label: 'Last Modified', select: 'sitemap:lastmod', width: '25%' },
+      { label: 'Priority', select: 'sitemap:priority', width: '12.5%' },
+      {
+        label: 'Change Frequency',
+        select: 'sitemap:changefreq',
+        width: '12.5%',
+      },
+    ],
+    sitemaps: {
+      projects: {
+        includeAppSources: false,
+        sources: ['/api/__sitemap__/urls/events'],
+      },
+      categories: {
+        includeAppSources: false,
+        sources: ['/api/__sitemap__/urls/categories'],
+      },
+    },
+  },
+
+  modules: [
+    '@nuxtjs/tailwindcss',
+    'nuxt-marquee',
+    '@nuxtjs/i18n',
+    'nuxt-simple-sitemap',
+    'nuxt-simple-robots',
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: ['defineStore', ['defineStore', 'definePiniaStore']],
+      },
+    ],
+    'nuxt-svgo',
+  ],
 
   security: {
     headers: {
@@ -102,4 +156,4 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2024-07-10',
-});
+})

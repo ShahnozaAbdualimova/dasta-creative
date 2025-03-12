@@ -7,7 +7,7 @@
       <div class="image-loading size-full">
         <img
           v-lazy="{
-            src: card?.main_image,
+            src: card?.main_image_thumbnail?.small,
           }"
           class="w-full h-full object-cover"
           :alt="card?.title"
@@ -46,6 +46,11 @@ interface Props {
     subtitle: string
     slug: string
     main_image: string
+    main_image_thumbnail: {
+      large: string
+      medium: string
+      small: string
+    }
     tags: {
       id: number
       title: string

@@ -1,9 +1,9 @@
 import useVuelidate, {
-  GlobalConfig,
-  Validation,
-  ValidationArgs,
+  type GlobalConfig,
+  type Validation,
+  type ValidationArgs,
 } from '@vuelidate/core'
-import { reactive, Ref, UnwrapNestedRefs } from 'vue'
+import { reactive, type Ref, type UnwrapNestedRefs } from 'vue'
 
 export type TFormArguments<T> = [
   initialValues: T,

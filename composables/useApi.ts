@@ -1,5 +1,4 @@
-import { NitroFetchRequest } from 'nitropack'
-import { FetchOptions } from 'ofetch'
+import { type FetchOptions, type FetchRequest } from 'ofetch'
 
 export const useApi = (apiUrl?: string) => {
   const { $i18n } = useNuxtApp()
@@ -20,7 +19,7 @@ export const useApi = (apiUrl?: string) => {
   }
 
   function $get<T = never>(
-    endpoint: NitroFetchRequest,
+    endpoint: FetchRequest,
     options?: FetchOptions
   ): Promise<T> {
     return new Promise((resolve, reject) => {
@@ -39,7 +38,7 @@ export const useApi = (apiUrl?: string) => {
   }
 
   function $post<T = never>(
-    endpoint: NitroFetchRequest,
+    endpoint: FetchRequest,
     options?: FetchOptions
   ): Promise<T> {
     return new Promise((resolve, reject) => {
@@ -55,7 +54,7 @@ export const useApi = (apiUrl?: string) => {
   }
 
   function $put<T = never>(
-    endpoint: NitroFetchRequest,
+    endpoint: FetchRequest,
     options?: FetchOptions
   ): Promise<T> {
     return new Promise((resolve, reject) => {
@@ -71,7 +70,7 @@ export const useApi = (apiUrl?: string) => {
   }
 
   function $patch<T = never>(
-    endpoint: NitroFetchRequest,
+    endpoint: FetchRequest,
     options?: FetchOptions
   ): Promise<T> {
     return new Promise((resolve, reject) => {
@@ -87,7 +86,7 @@ export const useApi = (apiUrl?: string) => {
   }
 
   function $delete<T = never>(
-    endpoint: NitroFetchRequest,
+    endpoint: FetchRequest,
     options?: FetchOptions
   ): Promise<T> {
     return new Promise((resolve, reject) => {
