@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   },
 
   ssr: true,
+  pages: true,
 
   app: {
     head: {

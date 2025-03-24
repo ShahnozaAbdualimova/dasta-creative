@@ -2,7 +2,7 @@
   <div class="container mx-auto p-4 text-white mb-16">
     <div
       :class="sectionStyle"
-      class="flex-center w-full space-x-5 flex-wrap gap-4"
+      class="flex-center w-full flex-wrap gap-4"
     >
       <template v-for="(project, key) in projects" :key="key">
         <div :class="cardStyle" class="flex-y-center space-x-5">

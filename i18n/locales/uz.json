@@ -1,5 +1,7 @@
 {
   "hello": "Salom",
+  "seo_title": "Dizayn qadoqlash",
+  "seo_description": "Tovar qadoqlash dizayni ishlab chiqaruvchi va iste'molchi o'rtasidagi asosiy aloqa kanalidir. Bozorda raqobatchilarning ko'pligini hisobga oladigan bo'lsak, endi faqat sifatli mahsulot ishlab chiqarish etarli emas.",
   "about": "Biz haqimizda",
   "cases": "Loyihalar",
   "contact": "Aloqa",
@@ -77,5 +79,15 @@
       "title": "Individual yondashuv",
       "description": "Sizning biznesingiz va maqsadli auditoriyangizni chuqur o‘rganib, aynan sizga mos keladigan noyob kontent yaratamiz."
     }
-  ]
+  ],
+  "services": {
+    "title": "Our Services",
+    "subtitle": "We offer services for both private and government organizations.",
+    "branding": "Branding",
+    "animation": "3D and 2D Animation",
+    "webDevelopment": "Web Development",
+    "videoSupport": "Video Support",
+    "designSupport": "Design Support",
+    "mediaStrategy": "Media Strategy"
+  }
 }
