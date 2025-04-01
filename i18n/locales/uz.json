@@ -1,7 +1,7 @@
 {
   "hello": "Salom",
   "seo_title": "Dizayn qadoqlash",
-  "seo_description": "Tovar qadoqlash dizayni ishlab chiqaruvchi va iste'molchi o'rtasidagi asosiy aloqa kanalidir. Bozorda raqobatchilarning ko'pligini hisobga oladigan bo'lsak, endi faqat sifatli mahsulot ishlab chiqarish etarli emas.",
+  "seo_description": "AAAA Tovar qadoqlash dizayni ishlab chiqaruvchi va iste'molchi o'rtasidagi asosiy aloqa kanalidir. Bozorda raqobatchilarning ko'pligini hisobga oladigan bo'lsak, endi faqat sifatli mahsulot ishlab chiqarish etarli emas.",
   "about": "Biz haqimizda",
   "cases": "Loyihalar",
   "contact": "Aloqa",
@@ -89,5 +89,7 @@
     "videoSupport": "Video Support",
     "designSupport": "Design Support",
     "mediaStrategy": "Media Strategy"
-  }
+  },
+  "how_to_build_website_title": "Veb-saytni ishlab chiqish qanday amalga oshiriladi?",
+  "how_to_build_website_text": "Biz tashrif qog'ozi veb-saytidan onlayn do'kon va portalgacha har qanday murakkablikdagi veb-saytlarni ishlab chiqamiz"
 }

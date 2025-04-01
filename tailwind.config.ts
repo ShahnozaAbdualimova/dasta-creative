@@ -36,7 +36,8 @@ export default <Partial<Config>>{
         },
         red: {
           DEFAULT: '#FA4A48'
-        }
+        },
+        primary: '#1DA1F2',
       },
       lineHeight: {
         130: '130%',
