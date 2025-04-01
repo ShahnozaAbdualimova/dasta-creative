@@ -37,6 +37,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-vue": "^9.9.0",
     "libphonenumber-js": "^1.12.6",
+    "lottie-web": "^5.12.2",
     "nuxt-marquee": "^1.0.3",
     "pinia": "^3.0.1",
     "prettier": "^2.8.4",
