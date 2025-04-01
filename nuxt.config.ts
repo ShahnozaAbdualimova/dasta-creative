@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  $development: undefined, $env: undefined, $meta: undefined, $production: undefined, $test: undefined,
   typescript: {
     tsConfig: {
       compilerOptions: {
@@ -156,5 +157,5 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-07-10',
+  compatibilityDate: '2024-07-10'
 })
