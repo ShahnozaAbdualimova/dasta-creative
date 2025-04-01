@@ -1,5 +1,15 @@
 {
   "rewrites": [
-    {"source": "/(.*)", "destination": "/"}
-  ]
+    {"source": "/(.*)", "destination": "/"}],
+  "build": {
+    "env": {
+      "NPM_FLAGS": "--legacy-peer-deps"
+    }
+  },
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    }
 }
